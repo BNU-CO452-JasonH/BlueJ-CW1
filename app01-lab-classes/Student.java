@@ -8,8 +8,6 @@ import java.util.*;
  * @version 2016.02.29
  * modified by Jason Huggins
  * dated 02/10/2020
- * 
- * Issue(s): Course details output as null, needs fixing
  */
 public class Student
 {
@@ -98,8 +96,8 @@ public class Student
     public void print()
     {
         System.out.println(name + ", student ID: " + id + ", credits: " 
-        + credits + ", course: " + course.getCodeNumber() + ", " + 
-        course.getTitle());
+        + credits + ", course: " + this.course.getCodeNumber() + ", " + 
+        this.course.getTitle());
     }
     
 }

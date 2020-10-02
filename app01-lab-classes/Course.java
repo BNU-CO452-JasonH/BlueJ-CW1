@@ -18,8 +18,8 @@ public class Course
      */
     public Course(String codeNo, String courseTitle)
     {
-        codeNo = codeNumber;
-        courseTitle = title;
+        codeNumber = codeNo;
+        title = courseTitle;
     }
     
     /**
@@ -36,5 +36,13 @@ public class Course
     public String getTitle()
     {
         return title;
+    }
+    
+    /**
+     * Prints the course's title and code number to the output terminal.
+     */
+    public void print() 
+    {
+        System.out.println(codeNumber + ", " + title);
     }
 }

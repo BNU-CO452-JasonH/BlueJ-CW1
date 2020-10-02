@@ -1,5 +1,11 @@
-Student studentJohn = new Student("John", "123456");
+Student studentSarah = new Student("Sarah", "456879");
 Course courseComputing = new Course("G400", "Computing");
-studentJohn.addCourse(courseComputing);
-studentJohn.print();
-John, student ID: 123456, credits: 0, course: null, null
+courseComputing.getCodeNumber()
+    returned String "G400"
+courseComputing.getTitle()
+    returned String "Computing"
+courseComputing.print();
+G400, Computing
+studentSarah.addCourse(courseComputing);
+studentSarah.print();
+Sarah, student ID: 456879, credits: 0, course: G400, Computing
