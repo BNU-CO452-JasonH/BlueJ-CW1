@@ -96,8 +96,8 @@ public class Student
     public void print()
     {
         System.out.println(name + ", student ID: " + id + ", credits: " 
-        + credits + ", course: " + this.course.getCodeNumber() + ", " + 
-        this.course.getTitle());
+        + credits + ", course: " + course.getCodeNumber() + ", " + 
+        course.getTitle());
     }
     
 }

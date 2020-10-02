@@ -1,0 +1,5 @@
+Student studentSteve = new Student("Steve", "978654");
+Course courseComputing = new Course("G400", "Computing");
+studentSteve.addCourse(courseComputing);
+studentSteve.print();
+Steve, student ID: 978654, credits: 0, course: G400, Computing
