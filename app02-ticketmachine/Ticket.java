@@ -2,10 +2,12 @@
 import java.util.Date;
 
 /**
- * Write a description of class Ticket here.
+ * The Ticket class models a ticket, containing a destination (either
+ * Aylesbury, Amersham or High Wycombe), price and the date/time 
+ * it was issued. 
  *
  * @author Jason Huggins
- * @version 09/10/2020
+ * @version 10/10/2020
  */
 public class Ticket
 {
