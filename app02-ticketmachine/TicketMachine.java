@@ -35,7 +35,8 @@ public class TicketMachine
     
     /**
      * Creates a machine that issues tickets with the price preset
-     * to each destination's fare.
+     * to each destination's fare. All available tickets that are 
+     * purchasable are shown to the customer.
      */
     public TicketMachine()
     {
@@ -141,12 +142,17 @@ public class TicketMachine
     /**
      * Prints a ticket if enough money has been inserted, and
      * reduces the current balance by the ticket price. 
-     * An error message is printed if more money is 
-     * required.
+     * 
+     * An error message is printed if no ticket has been 
+     * selected or more money is required.
      */
     public void printTicket()
     {
-        if (balance >= price) 
+        if (issuedTicket == null) 
+        {
+            System.out.println("No ticket has been selected.");
+        }
+        else if (balance >= price) 
         {
             // Simulate the printing of a ticket.
             System.out.println("##################");
@@ -164,8 +170,10 @@ public class TicketMachine
         }
         else 
         {
-            System.out.println("You must insert at least: " +
-                               (price - balance) + " more pence.");
+            System.out.println("Insufficient balance for the " +
+                issuedTicket.getDestination() + 
+                " ticket. \nYou must enter at least " +
+                (price - balance) + " more pence.");
                     
         }
     }
