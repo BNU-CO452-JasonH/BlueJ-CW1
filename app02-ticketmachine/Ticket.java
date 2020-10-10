@@ -22,12 +22,30 @@ public class Ticket
     * Constructor for objects of class Ticket setting the destination
     * and price, where the date shows the current system 
     * date and time.
+    * @param givenDestination - the new ticket's destination
+    * @param givenPrice - the new ticket's price
     */
    public Ticket(String givenDestination, int givenPrice)
    {
        destination = givenDestination;
        price = givenPrice;
        issueDateTime = new Date();
+   }
+   
+   /**
+    * @return The destination the ticket is for
+    */
+   public String getDestination()
+   {
+       return destination;
+   }
+   
+   /**
+    * @return The price of the ticket
+    */
+   public int getPrice()
+   {
+       return price;
    }
    
    /**
