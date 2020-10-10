@@ -85,21 +85,35 @@ public class TicketMachine
     }
 
     /**
-     * Receives an amount of money from a customer.
-     * Checks that the amount is sensible.
-     * @param amount - the amount of money inputted by the customer
+     * Inserts a 10p coin into the ticket machine.
      */
-    public void insertMoney(int amount)
+    public void insert10P()
     {
-        if (amount > 0) 
-        {
-            balance = balance + amount;
-        }
-        else 
-        {
-            System.out.println("Use a positive amount rather than: " +
-                               amount);
-        }
+        balance += 10;
+    }
+    
+    /**
+     * Inserts a 20p coin into the ticket machine.
+     */
+    public void insert20P()
+    {
+        balance += 20;
+    }
+    
+    /**
+     * Inserts a £1 coin into the ticket machine.
+     */
+    public void insert100P()
+    {
+        balance += 100;
+    }
+    
+    /**
+     * Inserts a £2 coin into the ticket machine.
+     */
+    public void insert200P()
+    {
+        balance += 200;
     }
     
     /**
