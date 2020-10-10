@@ -20,14 +20,18 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    
     // An object of the Ticket class representing the issued ticket
     private Ticket issuedTicket;
     // An object of the Ticket class representing the Aylesbury ticket
-    private Ticket aylesburyTicket;
+    public static final Ticket AYLESBURY_TICKET = 
+        new Ticket("Aylesbury", 220);
     // An object of the Ticket class representing the Amersham ticket
-    private Ticket amershamTicket;
+    public static final Ticket AMERSHAM_TICKET =
+        new Ticket("Amersham", 300);
     // An object of the Ticket class representing the High Wycombe ticket
-    private Ticket highWycombeTicket;
+    public static final Ticket HIGH_WYCOMBE_TICKET =
+        new Ticket("High Wycombe", 330);
     
     /**
      * Creates a machine that issues tickets with the price preset
@@ -39,10 +43,15 @@ public class TicketMachine
         balance = 0;
         total = 0;
         
-        aylesburyTicket = new Ticket("Aylesbury", 220);
-        amershamTicket = new Ticket("Amersham", 300);
-        highWycombeTicket = new Ticket("High Wycombe", 330);
         issuedTicket = null;
+        
+        System.out.println("Tickets available to buy:");
+        System.out.println("1. " + AYLESBURY_TICKET.getDestination() +
+            " = " + AYLESBURY_TICKET.getPrice());
+        System.out.println("2. " + AMERSHAM_TICKET.getDestination() +
+            " = " + AMERSHAM_TICKET.getPrice());
+        System.out.println("3. " + HIGH_WYCOMBE_TICKET.getDestination() +
+            " = " + HIGH_WYCOMBE_TICKET.getPrice());
     }
 
     /**
@@ -50,7 +59,7 @@ public class TicketMachine
      */
     public void selectAylesburyTicket()
     {
-        issuedTicket = aylesburyTicket;
+        issuedTicket = AYLESBURY_TICKET;
         price = issuedTicket.getPrice();
         System.out.println("Ticket selected: Aylesbury");
     }
@@ -60,7 +69,7 @@ public class TicketMachine
      */
     public void selectAmershamTicket()
     {
-        issuedTicket = amershamTicket;
+        issuedTicket = AMERSHAM_TICKET;
         price = issuedTicket.getPrice();
         System.out.println("Ticket selected: Amersham");
     }
@@ -70,7 +79,7 @@ public class TicketMachine
      */
     public void selectHighWycombeTicket()
     {
-        issuedTicket = highWycombeTicket;
+        issuedTicket = HIGH_WYCOMBE_TICKET;
         price = issuedTicket.getPrice();
         System.out.println("Ticket selected: High Wycombe");
     }
@@ -85,35 +94,47 @@ public class TicketMachine
     }
 
     /**
-     * Inserts a 10p coin into the ticket machine.
+     * Inserts a 10p coin into the ticket machine and displays 
+     * the new balance.
      */
     public void insert10P()
     {
         balance += 10;
+        System.out.println("Inserted 10p.");
+        System.out.println("New balance: " + balance);
     }
     
     /**
-     * Inserts a 20p coin into the ticket machine.
+     * Inserts a 20p coin into the ticket machine and displays 
+     * the new balance.
      */
     public void insert20P()
     {
         balance += 20;
+        System.out.println("Inserted 20p.");
+        System.out.println("New balance: " + balance);
     }
     
     /**
-     * Inserts a £1 coin into the ticket machine.
+     * Inserts a £1 coin into the ticket machine and displays 
+     * the new balance.
      */
     public void insert100P()
     {
         balance += 100;
+        System.out.println("Inserted £1.");
+        System.out.println("New balance: " + balance);
     }
     
     /**
-     * Inserts a £2 coin into the ticket machine.
+     * Inserts a £2 coin into the ticket machine and displays 
+     * the new balance.
      */
     public void insert200P()
     {
         balance += 200;
+        System.out.println("Inserted £2.");
+        System.out.println("New balance: " + balance);
     }
     
     /**
