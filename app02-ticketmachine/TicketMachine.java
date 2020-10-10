@@ -10,7 +10,7 @@
  * @version 2016.02.29
  * 
  * Modified by Jason Huggins
- * Dated 10/10/2020
+ * Dated 11/10/2020
  */
 public class TicketMachine
 {
@@ -63,7 +63,8 @@ public class TicketMachine
     {
         issuedTicket = AYLESBURY_TICKET;
         price = issuedTicket.getPrice();
-        System.out.println("Ticket selected: Aylesbury");
+        System.out.println("Ticket selected: Aylesbury " + 
+            "(" + price + ")");
     }
     
     /**
@@ -73,7 +74,8 @@ public class TicketMachine
     {
         issuedTicket = AMERSHAM_TICKET;
         price = issuedTicket.getPrice();
-        System.out.println("Ticket selected: Amersham");
+        System.out.println("Ticket selected: Amersham " + 
+            "(" + price + ")");
     }
     
     /**
@@ -83,7 +85,8 @@ public class TicketMachine
     {
         issuedTicket = HIGH_WYCOMBE_TICKET;
         price = issuedTicket.getPrice();
-        System.out.println("Ticket selected: High Wycombe");
+        System.out.println("Ticket selected: High Wycombe " + 
+            "(" + price + ")");
     }
 
     /**
@@ -159,7 +162,7 @@ public class TicketMachine
             System.out.println("# The BlueJ Line");
             System.out.println("# " + issuedTicket.getDestination() +
                 " Ticket");
-            System.out.println("# " + price + " pence.");
+            System.out.println("# " + price + " pence");
             System.out.println("##################");
             System.out.println();
 
@@ -174,7 +177,6 @@ public class TicketMachine
                 issuedTicket.getDestination() + 
                 " ticket. \nYou must enter at least " +
                 (price - balance) + " more pence.");
-                    
         }
     }
 
