@@ -10,7 +10,7 @@
  * @version 2016.02.29
  * 
  * Modified by Jason Huggins
- * Dated 09/10/2020
+ * Dated 10/10/2020
  */
 public class TicketMachine
 {
@@ -30,7 +30,8 @@ public class TicketMachine
     private Ticket highWycombeTicket;
     
     /**
-     * Create a machine that issues tickets of the given price.
+     * Creates a machine that issues tickets with the price being set
+     * accordingly to each destination's fare.
      */
     public TicketMachine()
     {
@@ -39,13 +40,13 @@ public class TicketMachine
         total = 0;
         
         aylesburyTicket = new Ticket("Aylesbury", 220);
-        amershamTicket = new Ticket("Aylesbury", 300);
-        highWycombeTicket = new Ticket("Aylesbury", 330);
+        amershamTicket = new Ticket("Amersham", 300);
+        highWycombeTicket = new Ticket("High Wycombe", 330);
         issuedTicket = null;
     }
 
     /**
-     * @Return The price of a ticket.
+     * @return The price of a ticket.
      */
     public int getPrice()
     {
@@ -53,7 +54,7 @@ public class TicketMachine
     }
 
     /**
-     * Return The amount of money already inserted for the
+     * @return The amount of money already inserted for the
      * next ticket.
      */
     public int getBalance()
@@ -62,8 +63,8 @@ public class TicketMachine
     }
 
     /**
-     * Receive an amount of money from a customer.
-     * Check that the amount is sensible.
+     * Receives an amount of money from a customer.
+     * Checks that the amount is sensible.
      */
     public void insertMoney(int amount)
     {
@@ -79,7 +80,7 @@ public class TicketMachine
     }
     
     /**
-     * Selects the Aylesbury ticket as the ticket being issued
+     * Selects the Aylesbury ticket as the ticket being issued.
      */
     public void selectAylesburyTicket()
     {
@@ -87,9 +88,26 @@ public class TicketMachine
     }
     
     /**
-     * Print a ticket if enough money has been inserted, and
-     * reduce the current balance by the ticket price. Print
-     * an error message if more money is required.
+     * Selects the Amersham ticket as the ticket being issued.
+     */
+    public void selectAmershamTicket()
+    {
+        issuedTicket = amershamTicket;
+    }
+    
+    /**
+     * Selects the High Wycombe ticket as the ticket being issued.
+     */
+    public void selectHighWycombeTicket()
+    {
+        issuedTicket = highWycombeTicket;
+    }
+    
+    /**
+     * Prints a ticket if enough money has been inserted, and
+     * reduces the current balance by the ticket price. 
+     * An error message is printed if more money is 
+     * required.
      */
     public void printTicket()
     {
@@ -117,8 +135,8 @@ public class TicketMachine
     }
 
     /**
-     * Return the money in the balance.
-     * The balance is cleared.
+     * @return The money in the balance.
+     * The balance is then cleared.
      */
     public int refundBalance()
     {
