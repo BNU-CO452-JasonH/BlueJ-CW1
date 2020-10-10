@@ -45,6 +45,7 @@ public class TicketMachine
         
         issuedTicket = null;
         
+        // Prints all available tickets
         System.out.println("Tickets available to buy:");
         System.out.println("1. " + AYLESBURY_TICKET.getDestination() +
             " = " + AYLESBURY_TICKET.getPrice());
@@ -55,7 +56,7 @@ public class TicketMachine
     }
 
     /**
-     * Selects the Aylesbury ticket as the ticket being issued.
+     * Selects the Aylesbury ticket as the ticket to be issued.
      */
     public void selectAylesburyTicket()
     {
@@ -65,7 +66,7 @@ public class TicketMachine
     }
     
     /**
-     * Selects the Amersham ticket as the ticket being issued.
+     * Selects the Amersham ticket as the ticket to be issued.
      */
     public void selectAmershamTicket()
     {
@@ -75,7 +76,7 @@ public class TicketMachine
     }
     
     /**
-     * Selects the High Wycombe ticket as the ticket being issued.
+     * Selects the High Wycombe ticket as the ticket to be issued.
      */
     public void selectHighWycombeTicket()
     {
@@ -145,12 +146,13 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        if(balance >= price) 
+        if (balance >= price) 
         {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
-            System.out.println("# Ticket");
+            System.out.println("# " + issuedTicket.getDestination() +
+                " Ticket");
             System.out.println("# " + price + " pence.");
             System.out.println("##################");
             System.out.println();
