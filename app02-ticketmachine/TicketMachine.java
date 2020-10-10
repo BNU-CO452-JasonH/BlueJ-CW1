@@ -4,7 +4,7 @@
  * The price of a ticket is specified via the constructor.
  * Instances will check to ensure that a user only enters
  * sensible amounts of money, and will only print a ticket
- * if enough money has been input.
+ * if enough money has been inputted.
  * 
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
@@ -30,8 +30,8 @@ public class TicketMachine
     private Ticket highWycombeTicket;
     
     /**
-     * Creates a machine that issues tickets with the price being set
-     * accordingly to each destination's fare.
+     * Creates a machine that issues tickets with the price preset
+     * to each destination's fare.
      */
     public TicketMachine()
     {
@@ -46,11 +46,33 @@ public class TicketMachine
     }
 
     /**
-     * @return The price of a ticket.
+     * Selects the Aylesbury ticket as the ticket being issued.
      */
-    public int getPrice()
+    public void selectAylesburyTicket()
     {
-        return price;
+        issuedTicket = aylesburyTicket;
+        price = issuedTicket.getPrice();
+        System.out.println("Ticket selected: Aylesbury");
+    }
+    
+    /**
+     * Selects the Amersham ticket as the ticket being issued.
+     */
+    public void selectAmershamTicket()
+    {
+        issuedTicket = amershamTicket;
+        price = issuedTicket.getPrice();
+        System.out.println("Ticket selected: Amersham");
+    }
+    
+    /**
+     * Selects the High Wycombe ticket as the ticket being issued.
+     */
+    public void selectHighWycombeTicket()
+    {
+        issuedTicket = highWycombeTicket;
+        price = issuedTicket.getPrice();
+        System.out.println("Ticket selected: High Wycombe");
     }
 
     /**
@@ -65,10 +87,11 @@ public class TicketMachine
     /**
      * Receives an amount of money from a customer.
      * Checks that the amount is sensible.
+     * @param amount - the amount of money inputted by the customer
      */
     public void insertMoney(int amount)
     {
-        if(amount > 0) 
+        if (amount > 0) 
         {
             balance = balance + amount;
         }
@@ -77,30 +100,6 @@ public class TicketMachine
             System.out.println("Use a positive amount rather than: " +
                                amount);
         }
-    }
-    
-    /**
-     * Selects the Aylesbury ticket as the ticket being issued.
-     */
-    public void selectAylesburyTicket()
-    {
-        issuedTicket = aylesburyTicket;
-    }
-    
-    /**
-     * Selects the Amersham ticket as the ticket being issued.
-     */
-    public void selectAmershamTicket()
-    {
-        issuedTicket = amershamTicket;
-    }
-    
-    /**
-     * Selects the High Wycombe ticket as the ticket being issued.
-     */
-    public void selectHighWycombeTicket()
-    {
-        issuedTicket = highWycombeTicket;
     }
     
     /**
@@ -117,7 +116,7 @@ public class TicketMachine
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
             System.out.println("# Ticket");
-            System.out.println("# " + price + " cents.");
+            System.out.println("# " + price + " pence.");
             System.out.println("##################");
             System.out.println();
 
@@ -129,7 +128,7 @@ public class TicketMachine
         else 
         {
             System.out.println("You must insert at least: " +
-                               (price - balance) + " more cents.");
+                               (price - balance) + " more pence.");
                     
         }
     }
