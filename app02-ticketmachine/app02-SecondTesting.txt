@@ -1,0 +1,12 @@
+TicketMachine ticketMa2 = new TicketMachine();
+Tickets available to buy:
+1. Aylesbury = 220
+2. Amersham = 300
+3. High Wycombe = 330
+ticketMa2.getBalance()
+    returned int 0
+ticketMa2.selectAmershamTicket();
+Ticket selected: Amersham (300)
+ticketMa2.printTicket();
+Insufficient balance for the Amersham ticket. 
+You must enter at least 300 more pence.
