@@ -1,0 +1,61 @@
+TicketMachine ticketMa1 = new TicketMachine();
+Tickets available to buy:
+1. Aylesbury = 220
+2. Amersham = 300
+3. High Wycombe = 330
+ticketMa1.insert200P();
+Inserted £2.
+New balance: 200
+ticketMa1.insert200P();
+Inserted £2.
+New balance: 400
+ticketMa1.insert100P();
+Inserted £1.
+New balance: 500
+ticketMa1.insert10P();
+Inserted 10p.
+New balance: 510
+ticketMa1.insert20P();
+Inserted 20p.
+New balance: 530
+ticketMa1.insert200P();
+Inserted £2.
+New balance: 730
+ticketMa1.insert200P();
+Inserted £2.
+New balance: 930
+ticketMa1.selectAmershamTicket();
+Ticket selected: Amersham (300)
+ticketMa1.printTicket();
+##################
+# The BlueJ Line
+# Amersham Ticket
+# 300 pence
+##################
+
+ticketMa1.getBalance()
+    returned int 630
+ticketMa1.selectAylesburyTicket();
+Ticket selected: Aylesbury (220)
+ticketMa1.printTicket();
+##################
+# The BlueJ Line
+# Aylesbury Ticket
+# 220 pence
+##################
+
+ticketMa1.getBalance()
+    returned int 410
+ticketMa1.selectHighWycombeTicket();
+Ticket selected: High Wycombe (330)
+ticketMa1.printTicket();
+##################
+# The BlueJ Line
+# High Wycombe Ticket
+# 330 pence
+##################
+
+ticketMa1.getBalance()
+    returned int 80
+ticketMa1.refundBalance()
+    returned int 80
