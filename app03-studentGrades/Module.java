@@ -27,4 +27,13 @@ public class Module
         mark = 0;
     }
 
+    /**
+     * Awards a percentage mark to a student for this module.
+     * @param mark The percentage mark awarded to the student
+     */
+    public void awardMark(int mark)
+    {
+        this.mark = mark;
+    }
+    
 }
