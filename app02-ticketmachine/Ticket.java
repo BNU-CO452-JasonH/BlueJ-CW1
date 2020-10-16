@@ -7,7 +7,7 @@ import java.util.Date;
  * it was issued. 
  *
  * @author Jason Huggins
- * @version 10/10/2020
+ * @version 16/10/2020
  */
 public class Ticket
 {
@@ -15,15 +15,15 @@ public class Ticket
    private String destination;
    // The ticket's date and time when issued
    private Date issueDateTime;
-   // The ticket's price
+   // The ticket's price (in pence)
    private int price;
     
    /**
     * Constructor for objects of class Ticket setting the destination
     * and price, where the date shows the current system 
     * date and time.
-    * @param givenDestination - the new ticket's destination
-    * @param givenPrice - the new ticket's price
+    * @param givenDestination The new ticket's destination
+    * @param givenPrice The new ticket's price
     */
    public Ticket(String givenDestination, int givenPrice)
    {
@@ -33,7 +33,7 @@ public class Ticket
    }
    
    /**
-    * @return The destination the ticket is for
+    * @return the destination the ticket is for
     */
    public String getDestination()
    {
@@ -41,7 +41,7 @@ public class Ticket
    }
    
    /**
-    * @return The price of the ticket
+    * @return the price of the ticket
     */
    public int getPrice()
    {

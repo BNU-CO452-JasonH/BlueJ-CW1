@@ -10,11 +10,11 @@
  * @version 2016.02.29
  * 
  * Modified by Jason Huggins
- * Dated 11/10/2020
+ * Dated 16/10/2020
  */
 public class TicketMachine
 {
-    // The price of a ticket from this machine.
+    // The price of a ticket from this machine (in pence).
     private int price;
     // The amount of money entered by a customer so far.
     private int balance;
@@ -90,7 +90,7 @@ public class TicketMachine
     }
 
     /**
-     * @return The amount of money already inserted for the
+     * @return the amount of money already inserted for the
      * next ticket.
      */
     public int getBalance()
@@ -181,8 +181,9 @@ public class TicketMachine
     }
 
     /**
-     * @return The money in the balance.
-     * The balance is then cleared.
+     * Refunds the money remaining in the balance to the customer
+     * and clears the balance afterwards.
+     * @return the money in the balance.
      */
     public int refundBalance()
     {
