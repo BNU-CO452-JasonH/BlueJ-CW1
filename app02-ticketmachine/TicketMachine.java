@@ -14,8 +14,6 @@
  */
 public class TicketMachine
 {
-    // The price of a ticket from this machine (in pence).
-    private int price;
     // The amount of money entered by a customer so far.
     private int balance;
     // The total amount of money collected by this machine.
@@ -40,7 +38,6 @@ public class TicketMachine
      */
     public TicketMachine()
     {
-        price = 0;
         balance = 0;
         total = 0;
         
@@ -62,9 +59,8 @@ public class TicketMachine
     public void selectAylesburyTicket()
     {
         issuedTicket = AYLESBURY_TICKET;
-        price = issuedTicket.getPrice();
         System.out.println("Ticket selected: Aylesbury " + 
-            "(" + price + ")");
+            "(" + issuedTicket.getPrice() + ")");
     }
     
     /**
@@ -73,9 +69,8 @@ public class TicketMachine
     public void selectAmershamTicket()
     {
         issuedTicket = AMERSHAM_TICKET;
-        price = issuedTicket.getPrice();
         System.out.println("Ticket selected: Amersham " + 
-            "(" + price + ")");
+            "(" + issuedTicket.getPrice() + ")");
     }
     
     /**
@@ -84,9 +79,8 @@ public class TicketMachine
     public void selectHighWycombeTicket()
     {
         issuedTicket = HIGH_WYCOMBE_TICKET;
-        price = issuedTicket.getPrice();
         System.out.println("Ticket selected: High Wycombe " + 
-            "(" + price + ")");
+            "(" + issuedTicket.getPrice() + ")");
     }
 
     /**
@@ -155,28 +149,28 @@ public class TicketMachine
         {
             System.out.println("No ticket has been selected.");
         }
-        else if (balance >= price) 
+        else if (balance >= issuedTicket.getPrice()) 
         {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
             System.out.println("# " + issuedTicket.getDestination() +
                 " Ticket");
-            System.out.println("# " + price + " pence");
+            System.out.println("# " + issuedTicket.getPrice() + " pence");
             System.out.println("##################");
             System.out.println();
 
             // Update the total collected with the price.
-            total = total + price;
+            total = total + issuedTicket.getPrice();
             // Reduce the balance by the price.
-            balance = balance - price;
+            balance = balance - issuedTicket.getPrice();
         }
         else 
         {
             System.out.println("Insufficient balance for the " +
                 issuedTicket.getDestination() + 
                 " ticket. \nYou must enter at least " +
-                (price - balance) + " more pence.");
+                (issuedTicket.getPrice() - balance) + " more pence.");
         }
     }
 
