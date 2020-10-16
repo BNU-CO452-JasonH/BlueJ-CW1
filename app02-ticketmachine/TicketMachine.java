@@ -33,26 +33,33 @@ public class TicketMachine
     
     /**
      * Creates a machine that issues tickets with the price preset
-     * to each destination's fare. All available tickets that are 
-     * purchasable are shown to the customer.
+     * to each destination's fare.
      */
     public TicketMachine()
     {
         balance = 0;
         total = 0;
-        
         issuedTicket = null;
+    }
+    
+    /**
+     * Prints all available tickets that can be purchased to the output
+     * terminal.
+     */
+    public void showAllTickets() 
+    {    
+        System.out.println("The following tickets are available to buy:");
         
-        // Prints all available tickets
-        System.out.println("Tickets available to buy:");
         System.out.println("1. " + AYLESBURY_TICKET.getDestination() +
             " = " + AYLESBURY_TICKET.getPrice());
         System.out.println("2. " + AMERSHAM_TICKET.getDestination() +
             " = " + AMERSHAM_TICKET.getPrice());
         System.out.println("3. " + HIGH_WYCOMBE_TICKET.getDestination() +
             " = " + HIGH_WYCOMBE_TICKET.getPrice());
+            
+        System.out.println("Please select a ticket you would like to buy.");
     }
-
+    
     /**
      * Selects the Aylesbury ticket as the ticket to be issued.
      */
