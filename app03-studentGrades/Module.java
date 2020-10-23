@@ -14,6 +14,12 @@ public class Module
     private String codeNo;
     // the module's percentage mark
     private int mark;
+    // the module's credit amount
+    private int credit;
+    // "true" if the module has been completed or "false" otherwise
+    private boolean completed;
+    // "true" if the module has been passed or "false" otherwise
+    private boolean passed;
     
     /**
      * Creates a new module with a given title and code number.
@@ -24,7 +30,12 @@ public class Module
     {
         this.title = title;
         this.codeNo = codeNo;
-        mark = 0;
+        
+        mark = -1;
+        credit = 0;
+        
+        completed = false;
+        passed = false;
     }
 
     /**
@@ -58,6 +69,14 @@ public class Module
     public int getMark()
     {
         return mark;
+    }
+    
+    /**
+     * @return true if the module has been completed or false otherwise
+     */
+    public boolean isCompleted()
+    {
+        return mark >= 0;
     }
     
     /**
