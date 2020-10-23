@@ -49,7 +49,6 @@ public class Course
         moduleFour = new Module("Computer Architectures", "CO450");
     }
     
-    
     /**
      * Returns the code number of this course.
      */
@@ -67,10 +66,27 @@ public class Course
     }
     
     /**
-     * Prints the course's title and code number to the output terminal.
+     * Calculates the final mark for this course by finding the sum of 
+     * the total mark and dividing it by the number of modules (i.e. 4).
+     * Afterwards, it's printed.
+     */
+    public void calculateFinalMark()
+    {
+        int totalMark = moduleOne.getMark() + moduleTwo.getMark() +
+            moduleThree.getMark() + moduleFour.getMark();
+            
+        finalMark = totalMark / 4;
+        print();
+    }
+    
+    /**
+     * Prints the course's title and code number to the output terminal, as
+     * well as its final mark.
      */
     public void print() 
     {
         System.out.println(codeNumber + ", " + title);
+        System.out.println("Final mark: " + finalMark);
     }
+    
 }
