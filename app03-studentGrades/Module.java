@@ -94,7 +94,7 @@ public class Module
      */
     public void print()
     {
-        System.out.println("Module: " + title + "\nCode number: " +
-            codeNo + "\nPercentage mark: " + mark);
+        System.out.println("Module: " + title + " (" +
+            codeNo + ")" + " = " + mark);
     }
 }
