@@ -29,6 +29,18 @@ public class Course
     }
     
     /**
+     * Creates the four modules for the course with its details preset.
+     */
+    public void createModules()
+    {
+        moduleOne = new Module("Computer Architectures", "CO450");
+        moduleTwo = new Module("Programming Concepts", "CO452");
+        moduleThree = new Module("Digital Technologies" +
+            " and Professional Practice", "CO450");
+        moduleFour = new Module("Computer Architectures", "CO450");
+    }
+    
+    /**
      * Adds a module to the course (only 4 modules can be added to a module).
      * If a number not in the range of 1-4 is inputted, an error message
      * will be displayed, stating that the input is invalid.
