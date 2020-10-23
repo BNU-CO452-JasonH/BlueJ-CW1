@@ -37,7 +37,23 @@ public class Module
     }
     
     /**
-     * @return The percentage mark of a module.
+     * @return The title of this module.
+     */
+    public String getTitle()
+    {
+        return title;
+    }
+    
+    /**
+     * @return The code number of this module.
+     */
+    public String getCodeNo()
+    {
+        return codeNo;
+    }
+    
+    /**
+     * @return The percentage mark of this module.
      */
     public int getMark()
     {
