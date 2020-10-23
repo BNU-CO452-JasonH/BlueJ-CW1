@@ -18,6 +18,11 @@ public class Course
     private Module moduleTwo;
     private Module moduleThree;
     private Module moduleFour;
+    
+    // the final mark calculated for the course
+    private int finalMark;
+    // the final grade calculated for the course
+    private String finalGrade;
 
     /**
      * Creates a new course with a given code number and title.
@@ -26,6 +31,10 @@ public class Course
     {
         codeNumber = codeNo;
         title = courseTitle;
+        
+        createModules();
+        finalMark = 0;
+        finalGrade = null;
     }
     
     /**
@@ -40,38 +49,6 @@ public class Course
         moduleFour = new Module("Computer Architectures", "CO450");
     }
     
-    /**
-     * Adds a module to the course (only 4 modules can be added to a module).
-     * If a number not in the range of 1-4 is inputted, an error message
-     * will be displayed, stating that the input is invalid.
-     * @param module The module to be added to the course.
-     * @param moduleNo The number the module is corresponding to.
-     */
-    public void addModule(Module module, int moduleNo)
-    {
-        if (moduleNo == 1) 
-        {
-            moduleOne = module;
-        }
-        else if (moduleNo == 2)
-        {
-            moduleTwo = module;
-        }
-        else if (moduleNo == 3)
-        {
-            moduleThree = module;
-        }
-        else if (moduleNo == 4) 
-        {
-            moduleFour = module;
-        }
-        else
-        {
-            System.out.println("Invalid module number inputted. " + 
-                "Only four modules can be added to a course. " + 
-                "Acceptable inputs are integers in the range 1-4.");
-        }
-    }
     
     /**
      * Returns the code number of this course.
