@@ -39,12 +39,22 @@ public class Module
     }
 
     /**
-     * Awards a percentage mark to a student for this module.
+     * Awards a percentage mark to a student for this module, but it must
+     * be in the range of 0-100. Should the input not fall within this range,
+     * an error message is printed.
      * @param mark The percentage mark awarded to the student
      */
     public void awardMark(int mark)
     {
-        this.mark = mark;
+        if ((mark < 0) && (mark > 100))
+        {
+            this.mark = mark;
+        }
+        else
+        {
+            System.out.println("Invalid input. The percentage mark " + 
+                "inputted must be between 0-100.");
+        }
     }
     
     /**
