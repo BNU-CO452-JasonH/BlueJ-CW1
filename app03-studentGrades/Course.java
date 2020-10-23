@@ -156,13 +156,18 @@ public class Course
     }
     
     /**
-     * Prints the course's title and code number to the output terminal, as
-     * well as its final mark.
+     * Prints the course and its modules' details to the output terminal, as
+     * well as its final mark and final grade.
      */
     public void print() 
     {
-        System.out.println(codeNumber + ", " + title);
+        System.out.println("Course: " + title + " (" + codeNumber + ")");
+        moduleOne.print();
+        moduleTwo.print();
+        moduleThree.print();
+        moduleFour.print();
         System.out.println("Final mark: " + finalMark);
+        System.out.println("Final grade: " + finalGrade);
     }
     
 }
