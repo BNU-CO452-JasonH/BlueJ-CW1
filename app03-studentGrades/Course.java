@@ -81,7 +81,6 @@ public class Course
     /**
      * Calculates the final mark for this course by finding the sum of 
      * the total mark and dividing it by the number of modules (i.e. 4).
-     * Afterwards, it's printed.
      */
     public void calculateFinalMark()
     {
@@ -89,6 +88,37 @@ public class Course
             moduleThree.getMark() + moduleFour.getMark();
             
         finalMark = totalMark / 4;
+    }
+    
+    /**
+     * Calculates the final grade for this course by comparing the final
+     * mark to multiple grade boundaries.
+     * Afterwards, the course's details, final mark and final grade are
+     * printed.
+     */
+    public void calculateFinalGrade()
+    {
+        if ((finalMark >= 0) && (finalMark <= 39))
+        {
+            finalGrade = "F";
+        }
+        else if ((finalMark >= 40) && (finalMark <= 49))
+        {
+            finalGrade = "D";
+        }
+        else if ((finalMark >= 50) && (finalMark <= 59))
+        {
+            finalGrade = "C";
+        }
+        else if ((finalMark >= 60) && (finalMark <= 69))
+        {
+            finalGrade = "B";
+        }
+        else if ((finalMark >= 70) && (finalMark <= 100))
+        {
+            finalGrade = "A";
+        }
+        
         print();
     }
     
