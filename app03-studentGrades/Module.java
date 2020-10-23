@@ -36,4 +36,20 @@ public class Module
         this.mark = mark;
     }
     
+    /**
+     * @return The percentage mark of a module.
+     */
+    public int getMark()
+    {
+        return mark;
+    }
+    
+    /**
+     * Prints the module details to the output terminal.
+     */
+    public void print()
+    {
+        System.out.println("Module: " + title + "\nCode number: " +
+            codeNo + "\nPercentage mark: " + mark);
+    }
 }
