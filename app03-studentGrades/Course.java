@@ -31,8 +31,8 @@ public class Course
     {
         codeNumber = codeNo;
         title = courseTitle;
-        
         createModules();
+        
         finalMark = 0;
         finalGrade = null;
     }
@@ -63,6 +63,19 @@ public class Course
     public String getTitle()
     {
         return title;
+    }
+    
+    /**
+     * Checks whether all four modules have been completed and if so, the
+     * course's final mark is calculated.
+     */
+    public void courseCompleted()
+    {
+        if ((moduleOne.isCompleted()) && (moduleTwo.isCompleted()) &&
+            (moduleThree.isCompleted()) && (moduleFour.isCompleted())) 
+        {
+            calculateFinalMark();
+        }
     }
     
     /**
