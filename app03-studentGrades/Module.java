@@ -22,14 +22,14 @@ public class Module
     private boolean passed;
     
     /**
-     * Creates a new module with a given title and code number.
-     * @param title The title of the module.
+     * Creates a new module with a given code number and title.
      * @param codeNo The code number of the module.
+     * @param title The title of the module.
      */
-    public Module(String title, String codeNo)
+    public Module(String codeNo, String title)
     {
-        this.title = title;
         this.codeNo = codeNo;
+        this.title = title;
         
         mark = -1; // set to -1 so it won't start off as being completed
         credit = 0;
