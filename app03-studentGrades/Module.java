@@ -4,7 +4,7 @@
  * title, module code and percentage mark.
  *
  * @author Jason Huggins
- * @version 16/10/2020
+ * @version 26/10/2020
  */
 public class Module
 {
@@ -31,7 +31,7 @@ public class Module
         this.title = title;
         this.codeNo = codeNo;
         
-        mark = -1;
+        mark = -1; // set to -1 so it won't start off as being completed
         credit = 0;
         
         completed = false;
@@ -42,7 +42,7 @@ public class Module
      * Awards a percentage mark to a student for this module, but it must
      * be in the range of 0-100. Should the input not fall within this range,
      * an error message is printed.
-     * @param mark The percentage mark awarded to the student
+     * @param mark The percentage mark awarded to the student.
      */
     public void awardMark(int mark)
     {
@@ -82,11 +82,19 @@ public class Module
     }
     
     /**
-     * @return true if the module has been completed or false otherwise
+     * @return true if the module has been completed or false otherwise.
      */
     public boolean isCompleted()
     {
         return mark >= 0;
+    }
+    
+    /**
+     * @return true if the module has been passed or false otherwise.
+     */
+    public boolean isPassed()
+    {
+        return mark >= 40;
     }
     
     /**
