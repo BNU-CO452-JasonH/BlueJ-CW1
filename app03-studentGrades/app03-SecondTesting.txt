@@ -1,0 +1,14 @@
+studentBob.print();
+Bob Martin, student ID: 2362783, credits: 0, course: G400, Computing
+courseComputing.print();
+Course: Computing (G400)
+Module: Computer Architectures (CO450) = 65
+Module: Programming Concepts (CO452) = 55
+Module: Digital Technologies and Professional Practice (CO454) = 80
+Module: Web Development (CO456) = 90
+Final mark: 72
+Final grade: A
+courseComputing.addModule(moduleCO450, 5);
+Invalid module number inputted. Only four modules can be added to a course. Acceptable inputs are integers in the range 1-4.
+moduleCO450.awardMark(-32);
+Invalid input. The percentage mark inputted must be between 0-100.

@@ -1,0 +1,40 @@
+Student studentBob = new Student("Bob Martin", "2362783");
+Course courseComputing = new Course("G400", "Computing");
+studentBob.addCourse(courseComputing);
+Module moduleCO450 = new Module("CO450", "Computer Architectures");
+Module moduleCO452 = new Module("CO452", "Programming Concepts");
+Module moduleCO454 = new Module("CO454", "Digital Technologies and Professional Practice");
+Module moduleCO456 = new Module("CO456", "Web Development");
+moduleCO450.awardMark(65);
+moduleCO452.awardMark(55);
+moduleCO454.awardMark(80);
+moduleCO456.awardMark(90);
+moduleCO450.print();
+Module: Computer Architectures (CO450) = 65
+moduleCO452.print();
+Module: Programming Concepts (CO452) = 55
+moduleCO454.print();
+Module: Digital Technologies and Professional Practice (CO454) = 80
+moduleCO456.print();
+Module: Web Development (CO456) = 90
+courseComputing.addModule(moduleCO450, 1);
+courseComputing.addModule(moduleCO452, 2);
+courseComputing.addModule(moduleCO454, 3);
+courseComputing.addModule(moduleCO456, 4);
+courseComputing.print();
+Course: Computing (G400)
+Module: Computer Architectures (CO450) = 65
+Module: Programming Concepts (CO452) = 55
+Module: Digital Technologies and Professional Practice (CO454) = 80
+Module: Web Development (CO456) = 90
+Final mark: 0
+Final grade: null
+courseComputing.calculateFinalMark();
+courseComputing.calculateFinalGrade();
+Course: Computing (G400)
+Module: Computer Architectures (CO450) = 65
+Module: Programming Concepts (CO452) = 55
+Module: Digital Technologies and Professional Practice (CO454) = 80
+Module: Web Development (CO456) = 90
+Final mark: 72
+Final grade: A
