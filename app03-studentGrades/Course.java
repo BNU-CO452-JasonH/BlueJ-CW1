@@ -33,22 +33,9 @@ public class Course
     {
         codeNumber = codeNo;
         title = courseTitle;
-        createModules();
         
         finalMark = 0;
         finalGrade = null;
-    }
-    
-    /**
-     * Creates the four modules for the course with its details preset.
-     */
-    public void createModules()
-    {
-        moduleOne = new Module("Computer Architectures", "CO450");
-        moduleTwo = new Module("Programming Concepts", "CO452");
-        moduleThree = new Module("Digital Technologies" +
-            " and Professional Practice", "CO450");
-        moduleFour = new Module("Computer Architectures", "CO450");
     }
     
     /**
