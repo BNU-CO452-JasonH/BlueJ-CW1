@@ -4,7 +4,7 @@
  * as well as its modules.
  *
  * @author Jason Huggins
- * @version 16/10/2020
+ * @version 26/10/2020
  */
 public class Course
 {
@@ -26,6 +26,8 @@ public class Course
 
     /**
      * Creates a new course with a given code number and title.
+     * @param codeNo The code number of the course.
+     * @param courseTitle The title of the course.
      */
     public Course(String codeNo, String courseTitle)
     {
@@ -50,7 +52,7 @@ public class Course
     }
     
     /**
-     * Returns the code number of this course.
+     * @return The code number of this course.
      */
     public String getCodeNumber()
     {
@@ -58,7 +60,7 @@ public class Course
     }
     
     /**
-     * Returns the title of this course.
+     * @return The title of this course.
      */
     public String getTitle()
     {
