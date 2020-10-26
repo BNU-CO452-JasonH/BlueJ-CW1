@@ -46,7 +46,7 @@ public class Module
      */
     public void awardMark(int mark)
     {
-        if ((mark < 0) && (mark > 100))
+        if ((mark >= 0) && (mark <= 100))
         {
             this.mark = mark;
         }
@@ -94,6 +94,11 @@ public class Module
      */
     public boolean isPassed()
     {
+        if (isCompleted()) 
+        {
+            credit = 15; // adds 15 credits for a completed module
+        }
+        
         return mark >= 40;
     }
     
