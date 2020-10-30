@@ -38,8 +38,16 @@ public class StockManager
     public void delivery(int id, int amount)
     {
         Product product = findProduct(id);
-        product.increaseQuantity(amount);
-        System.out.println("Product delivered: " + product + " [Qty: " + amount + "]");
+
+        if (product != null)
+        {
+            product.increaseQuantity(amount);
+            System.out.println("Product delivered: " + product + " [Qty: " + amount + "]");
+        }
+        else
+        {
+            System.out.println("Product ID " + id + " has not been found.");
+        }
     }
     
     /**
