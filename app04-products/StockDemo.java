@@ -39,45 +39,24 @@ public class StockDemo
      * might be used. Details of one product are shown, the
      * product is restocked, and then the details are shown again.
      */
-    public void demo()
+    public void demoDelivery()
     {
         // Show details of all of the products.
         manager.printAllProducts();
-        // Take delivery of 5 items of one of the products.
-        manager.delivery(132, 5);
+        
+        // Take delivery of all of the products and print the stock afterwards.
+        manager.delivery(101, 5);
+        manager.delivery(102, 2);
+        manager.delivery(103, 7);
+        manager.delivery(104, 6);
+        manager.delivery(105, 9);
+        manager.delivery(106, 11);
+        manager.delivery(107, 12);
+        manager.delivery(108, 15);
+        manager.delivery(109, 19);
+        manager.delivery(110, 17);
+
         manager.printAllProducts();
-    }
-    
-    /**
-     * Show details of the given product. If found,
-     * its name and stock quantity will be shown.
-     * @param id The ID of the product to look for.
-     */
-    public void showDetails(int id)
-    {
-        Product product = getProduct(id);
-        
-        if(product != null) 
-        {
-            System.out.println(product.toString());
-        }
-    }
-    
-    /**
-     * Sell one of the given item.
-     * Show the before and after status of the product.
-     * @param id The ID of the product being sold.
-     */
-    public void sellProduct(int id)
-    {
-        Product product = getProduct(id);
-        
-        if(product != null) 
-        {
-            showDetails(id);
-            product.sellOne();
-            showDetails(id);
-        }
     }
     
     /**
