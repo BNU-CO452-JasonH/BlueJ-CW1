@@ -37,6 +37,7 @@ public class StockManager
      */
     public void delivery(int id, int amount)
     {
+        
     }
     
     /**
@@ -46,6 +47,14 @@ public class StockManager
      */
     public Product findProduct(int id)
     {
+        for (Product product : stock) 
+        {
+            if (product.getID() == id)
+            {
+                return product;
+            }
+        }
+        
         return null;
     }
     
