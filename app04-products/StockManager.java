@@ -81,6 +81,38 @@ public class StockManager
     }
 
     /**
+     * Show details of the given product. If found,
+     * its name and stock quantity will be shown.
+     * @param id The ID of the product to look for.
+     */
+    public void printDetails(int id)
+    {
+        Product product = findProduct(id);
+        
+        if(product != null) 
+        {
+            System.out.println(product);
+        }
+    }
+    
+    /**
+     * Sell one of the given item.
+     * Show the before and after status of the product.
+     * @param id The ID of the product being sold.
+     */
+    public void sellProduct(int id)
+    {
+        Product product = findProduct(id);
+        
+        if(product != null) 
+        {
+            printDetails(id);
+            product.sellOne();
+            printDetails(id);
+        }
+    }
+    
+    /**
      * Print details of all the products.
      */
     public void printAllProducts()
