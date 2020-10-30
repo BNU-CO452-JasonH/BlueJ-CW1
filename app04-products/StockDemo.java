@@ -21,10 +21,17 @@ public class StockDemo
     {
         this.manager = manager;
         
-        // Add at least 10 products below (e.g. products with a name and model, like phones)
-        manager.addProduct(new Product(101, "PlayStation 4 Pro 1TB"));
-        manager.addProduct(new Product(102, "Nintendo Switch 32GB Neon"));
+        // Adding at least 10 products
+        manager.addProduct(new Product(101, "PlayStation 4 Pro"));
+        manager.addProduct(new Product(102, "Nintendo Switch Neon"));
         manager.addProduct(new Product(103, "Xbox One X"));
+        manager.addProduct(new Product(104, "Xbox One S"));
+        manager.addProduct(new Product(105, "PlayStation 4 Slim"));
+        manager.addProduct(new Product(106, "PlayStation 5"));
+        manager.addProduct(new Product(107, "Xbox Series X"));
+        manager.addProduct(new Product(108, "Xbox Series S"));
+        manager.addProduct(new Product(109, "Nintendo Switch Grey"));
+        manager.addProduct(new Product(110, "Xbox One S All-Digital Edition"));
     }
     
     /**
