@@ -32,6 +32,7 @@ public class StockDemo
         manager.addProduct(new Product(108, "Xbox Series S"));
         manager.addProduct(new Product(109, "Nintendo Switch Grey"));
         manager.addProduct(new Product(110, "Xbox One S All-Digital Edition"));
+        manager.addProduct(new Product(111, "Nintendo 2DS XL"));
     }
     
     /**
@@ -41,10 +42,10 @@ public class StockDemo
      */
     public void demoDelivery()
     {
-        // Show details of all of the products.
+        // Show details of all products.
         manager.printAllProducts();
         
-        // Take delivery of all of the products and print the stock afterwards.
+        // Take delivery of all products and print the stock afterwards.
         manager.delivery(101, 5);
         manager.delivery(102, 2);
         manager.delivery(103, 7);
@@ -55,6 +56,7 @@ public class StockDemo
         manager.delivery(108, 15);
         manager.delivery(109, 19);
         manager.delivery(110, 17);
+        manager.delivery(111, 5);
 
         manager.printAllProducts();
     }
@@ -76,6 +78,18 @@ public class StockDemo
         // Shows details of the products again with correct names.
         manager.printDetails(105);
         manager.printDetails(106);
+    }
+    
+    public void demoRemove()
+    {
+        // Shows details of all products to begin with.
+        manager.printAllProducts();
+        
+        // Removes the last product from the stock list based on its ID.
+        manager.removeProduct(111);
+        
+        // Shows details of all products again with the last product removed.
+        manager.printAllProducts();
     }
     
     /**
