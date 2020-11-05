@@ -60,18 +60,22 @@ public class StockDemo
     }
     
     /**
-     * Demonstrates two products with misspelt names being renamed with their correct
+     * Demonstrates two products with misspelt names being renamed to their correct
      * names.
      */
     public void demoRename()
     {
-        // Shows details of products with incorrect names.
+        // Shows details of the products with incorrect names.
         manager.printDetails(105);
         manager.printDetails(106);
         
-        // Renames above products to correct names and prints their details out.
+        // Renames the above products to correct names.
         manager.renameProduct(105, "PlayStation 4 Slim");
         manager.renameProduct(106, "PlayStation 5");
+        
+        // Shows details of the products again with correct names.
+        manager.printDetails(105);
+        manager.printDetails(106);
     }
     
     /**
