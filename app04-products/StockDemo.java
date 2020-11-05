@@ -6,7 +6,7 @@
  * @author David J. Barnes and Michael Kölling.
  * @version 2016.02.29
  * Modified by Jason Huggins
- * Dated 30/10/2020
+ * Dated 05/11/2020
  */
 public class StockDemo
 {
@@ -26,8 +26,8 @@ public class StockDemo
         manager.addProduct(new Product(102, "Nintendo Switch Neon"));
         manager.addProduct(new Product(103, "Xbox One X"));
         manager.addProduct(new Product(104, "Xbox One S"));
-        manager.addProduct(new Product(105, "PlayStation 4 Slim"));
-        manager.addProduct(new Product(106, "PlayStation 5"));
+        manager.addProduct(new Product(105, "PlaySation 4 Slim"));
+        manager.addProduct(new Product(106, "PlaySation 5"));
         manager.addProduct(new Product(107, "Xbox Series X"));
         manager.addProduct(new Product(108, "Xbox Series S"));
         manager.addProduct(new Product(109, "Nintendo Switch Grey"));
@@ -57,6 +57,21 @@ public class StockDemo
         manager.delivery(110, 17);
 
         manager.printAllProducts();
+    }
+    
+    /**
+     * Demonstrates two products with misspelt names being renamed with their correct
+     * names.
+     */
+    public void demoRename()
+    {
+        // Shows details of products with incorrect names.
+        manager.printDetails(105);
+        manager.printDetails(106);
+        
+        // Renames above products to correct names and prints their details out.
+        manager.renameProduct(105, "PlayStation 4 Slim");
+        manager.renameProduct(106, "PlayStation 5");
     }
     
     /**
