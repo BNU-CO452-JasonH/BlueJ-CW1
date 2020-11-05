@@ -30,6 +30,45 @@ public class StockManager
     }
     
     /**
+     * Try to find a product in the stock with the given id.
+     * @return The identified product, or null if there is none
+     *         with a matching ID.
+     */
+    public Product findProduct(int id)
+    {
+        for (Product product : stock) 
+        {
+            if (product.getID() == id)
+            {
+                return product;
+            }
+        }
+        
+        return null;
+    }
+    
+    /**
+     * Renames a particular product based on its given ID and new name.
+     * @param id The ID of the product to be renamed.
+     * @param name The new name that the product will be renamed to.
+     */
+    public void renameProduct(int id, String name)
+    {
+        Product product = findProduct(id);
+        
+        if (product != null)
+        {
+            product.setName(name);
+            System.out.println("Product ID " + id + " has been renamed to " + 
+                product.getName());
+        }
+        else
+        {
+            System.out.println("Product ID " + id + " has not been found.");
+        }
+    }
+    
+    /**
      * Receive a delivery of a particular product.
      * Increase the quantity of the product by the given amount.
      * @param id The ID of the product.
@@ -48,24 +87,6 @@ public class StockManager
         {
             System.out.println("Product ID " + id + " has not been found.");
         }
-    }
-    
-    /**
-     * Try to find a product in the stock with the given id.
-     * @return The identified product, or null if there is none
-     *         with a matching ID.
-     */
-    public Product findProduct(int id)
-    {
-        for (Product product : stock) 
-        {
-            if (product.getID() == id)
-            {
-                return product;
-            }
-        }
-        
-        return null;
     }
     
     /**
