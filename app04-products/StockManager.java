@@ -48,6 +48,26 @@ public class StockManager
     }
     
     /**
+     * Remove a product from the list based on its ID.
+     * @param id The ID of the product to be removed.
+     */
+    public void removeProduct(int id)
+    {
+        Product product = findProduct(id);
+        
+        if (product != null)
+        {
+            System.out.println("Product ID " + id + " has been " 
+                + "removed from the stock list.");
+            stock.remove(product);
+        }
+        else
+        {
+            System.out.println("Product ID " + id + " has not been found.");
+        }
+    }
+    
+    /**
      * Renames a particular product based on its given ID and new name.
      * @param id The ID of the product to be renamed.
      * @param name The new name that the product will be renamed to.
