@@ -4,7 +4,7 @@
  * @author David J. Barnes and Michael Kölling.
  * @version 2016.02.29
  * Modified by Jason Huggins
- * Dated 30/10/2020
+ * Dated 05/11/2020
  */
 public class Product
 {
@@ -51,7 +51,34 @@ public class Product
     {
         return quantity;
     }
-
+    
+    /**
+     * Changes the ID of a product based on the given ID.
+     * @param id The product's current ID to be changed.
+     */
+    public void setID(int id)
+    {
+        this.id = id;
+    }
+    
+    /**
+     * Changes the name of the product.
+     * @param name The product's current name to be changed.
+     */
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    
+    /**
+     * Changes the quantity of the product.
+     * @param quantity The product's current quantity to be changed.
+     */
+    public void setQuantity(int quantity)
+    {
+        this.quantity = quantity;
+    }
+    
     /**
      * @return The id, name and quantity in stock.
      */
