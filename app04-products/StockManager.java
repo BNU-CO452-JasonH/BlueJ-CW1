@@ -130,9 +130,13 @@ public class StockManager
     {
         Product product = findProduct(id);
         
-        if(product != null) 
+        if (product != null) 
         {
             System.out.println(product);
+        }
+        else 
+        {
+            System.out.println("Product ID " + id + " has not been found.");
         }
     }
     
@@ -147,9 +151,11 @@ public class StockManager
         
         if (product != null) 
         {
-            printDetails(id);
-            product.sellQuantity(quantity);
-            printDetails(id);
+            product.sell(quantity);
+        }
+        else
+        {
+            System.out.println("Product ID " + id + " has not been found.");
         }
     }
     
