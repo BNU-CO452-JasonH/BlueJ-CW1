@@ -50,7 +50,7 @@ public class StockDemo
      */
     public void runDemo()
     {
-       System.out.println("|-------- Jason's Stock List --------|");
+       printHeader();
        System.out.println("StockManager Demonstration");
         
        // Show details of all products.
@@ -69,6 +69,16 @@ public class StockDemo
        
        // Demos printing products with low stock levels.
        manager.printLowStock();
+    }
+    
+    /**
+     * Prints a header for the stock list.
+     */
+    private void printHeader()
+    {
+        System.out.println("===================");
+        System.out.println("Jason's Stock List");
+        System.out.println("===================");
     }
     
     /**
