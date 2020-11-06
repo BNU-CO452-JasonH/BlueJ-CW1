@@ -101,7 +101,7 @@ public class Product
         }
         else 
         {
-            System.out.println("Attempt to restock " + name +
+            System.out.println("Attempted to restock " + name +
                                " with a non-positive amount: " + amount);
         }
     }
@@ -123,7 +123,7 @@ public class Product
             System.out.println("Insufficient stock of product: " + toString());
             
             // Selling current quantity of product
-            System.out.println("Amount ordered: " + sellQuantity);
+            System.out.println("Amount ordered of available stock: " + quantity);
             quantity = 0;
         }
         else
