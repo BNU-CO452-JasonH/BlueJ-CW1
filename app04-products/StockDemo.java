@@ -17,7 +17,7 @@ public class StockDemo
     public static final int FIRST_ID = 101;
     // The stock manager.
     private StockManager manager;
-    // Random number generator.
+    // Random number generator used for making random delivery quantities.
     private Random generator;
     
     /**
@@ -68,7 +68,8 @@ public class StockDemo
        System.out.println("\n|---Stock Removal Demonstration---|\n");
        demoRemove();
        // Demos printing products based on a part of its name.
-       
+       System.out.println("\n|---Product Search with Partial Name Demonstration---|\n");
+       manager.printPartialName("PlayStation");
        // Demos printing products with low stock levels.
        System.out.println("\n|---Low Product Stock Demonstration---|\n");
        manager.printLowStock();
