@@ -50,35 +50,28 @@ public class StockDemo
      */
     public void runDemo()
     {
-       printHeader();
-       System.out.println("StockManager Demonstration");
+       System.out.println("|------StockManager Demonstration------|");
         
        // Show details of all products.
        manager.printAllProducts();
        
        // Demos delivery process.
-       System.out.println("\nDelivery Demonstration\n");
+       System.out.println("\n|---Delivery Demonstration---|\n");
        demoDelivery();
+       // Demos selling process.
+       System.out.println("\n|---Selling Demonstration---|\n");
+       demoSell();
        // Demos stock renaming process.
-       System.out.println("\nStock Renaming Demonstration\n");
+       System.out.println("\n|---Stock Renaming Demonstration---|\n");
        demoRename();
        // Demos stock removal process.
-       System.out.println("\nStock Removal Demonstration\n");
+       System.out.println("\n|---Stock Removal Demonstration---|\n");
        demoRemove();
        // Demos printing products based on a part of its name.
        
        // Demos printing products with low stock levels.
+       System.out.println("\n|---Low Product Stock Demonstration---|\n");
        manager.printLowStock();
-    }
-    
-    /**
-     * Prints a header for the stock list.
-     */
-    private void printHeader()
-    {
-        System.out.println("===================");
-        System.out.println("Jason's Stock List");
-        System.out.println("===================");
     }
     
     /**
@@ -98,6 +91,21 @@ public class StockDemo
         }
 
         manager.printAllProducts();
+    }
+    
+    /**
+     * Demonstrates selling different quantities of each product.
+     */
+    private void demoSell()
+    {
+        int amount = 0;
+        
+        for (int id = 101; id <= 111; id++)
+        {
+            amount = generator.nextInt(9);
+            manager.sellProduct(id, amount);
+            amount++;
+        }
     }
     
     /**
@@ -130,5 +138,5 @@ public class StockDemo
         // Shows details of all products with the last product removed.
         manager.printAllProducts();
     }
-
+    
 }
