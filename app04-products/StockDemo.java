@@ -1,3 +1,6 @@
+// Importing Random class.
+import java.util.Random;
+
 /**
  * Demonstrate the StockManager and Product classes.
  * The demonstration becomes properly functional as
@@ -10,19 +13,25 @@
  */
 public class StockDemo
 {
+    // Constant for the first product ID.
+    public static final int FIRST_ID = 101;
     // The stock manager.
     private StockManager manager;
-
+    // Random number generator.
+    private Random generator;
+    
     /**
      * Create a StockManager and populate it with a few
      * sample products.
      */
     public StockDemo(StockManager manager)
     {
+        generator = new Random();
         this.manager = manager;
+        int id = FIRST_ID;
         
         // Adding at least 10 products
-        manager.addProduct(new Product(101, "PlayStation 4 Pro"));
+        manager.addProduct(new Product(id, "PlayStation 4 Pro"));
         manager.addProduct(new Product(102, "Nintendo Switch Neon"));
         manager.addProduct(new Product(103, "Xbox One X"));
         manager.addProduct(new Product(104, "Xbox One S"));
@@ -42,36 +51,41 @@ public class StockDemo
     public void runDemo()
     {
        System.out.println("|-------- Jason's Stock List --------|");
-       System.out.println("StockManager Demonstration\n");
+       System.out.println("StockManager Demonstration");
         
        // Show details of all products.
        manager.printAllProducts();
        
-       // Demos delivery process
+       // Demos delivery process.
+       System.out.println("\nDelivery Demonstration\n");
        demoDelivery();
-       // Demos stock renaming process
+       // Demos stock renaming process.
+       System.out.println("\nStock Renaming Demonstration\n");
        demoRename();
-       // Demos stock removal process
+       // Demos stock removal process.
+       System.out.println("\nStock Removal Demonstration\n");
        demoRemove();
+       // Demos printing products based on a part of its name.
+       
+       // Demos printing products with low stock levels.
+       manager.printLowStock();
     }
     
     /**
-     * Demonstrates taking delivery of all products.
+     * Demonstrates taking delivery of all products and prints the updated stock list
+     * afterwards.
      */
     private void demoDelivery()
     {
-        // Take delivery of all products and print the updated stock list afterwards.
-        manager.delivery(101, 5);
-        manager.delivery(102, 2);
-        manager.delivery(103, 7);
-        manager.delivery(104, 6);
-        manager.delivery(105, 9);
-        manager.delivery(106, 11);
-        manager.delivery(107, 12);
-        manager.delivery(108, 15);
-        manager.delivery(109, 19);
-        manager.delivery(110, 17);
-        manager.delivery(111, 5);
+        int amount = 0;
+        
+        // Randomly generates an amount to deliver for each product.
+        for (int id = 101; id <= 111; id++)
+        {
+            amount = generator.nextInt(9);
+            manager.delivery(id, amount);
+            amount++;
+        }
 
         manager.printAllProducts();
     }
