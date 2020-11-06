@@ -6,7 +6,7 @@
  * @author David J. Barnes and Michael Kölling.
  * @version 2016.02.29
  * Modified by Jason Huggins
- * Dated 05/11/2020
+ * Dated 06/11/2020
  */
 public class StockDemo
 {
@@ -36,9 +36,9 @@ public class StockDemo
     }
     
     /**
-     * Provide a very simple demonstration of how a StockManager
-     * might be used. Details of one product are shown, the
-     * product is restocked, and then the details are shown again.
+     * Demonstrates the use of a StockManager by showing details of all products in the
+     * stock list, taking delivery of all products and printing the new stock list
+     * afterwards.
      */
     public void demoDelivery()
     {
@@ -91,30 +91,5 @@ public class StockDemo
         // Shows details of all products again with the last product removed.
         manager.printAllProducts();
     }
-    
-    /**
-     * Get the product with the given id from the manager.
-     * An error message is printed if there is no match.
-     * @param id The ID of the product.
-     * @return The Product, or null if no matching one is found.
-     */
-    public Product getProduct(int id)
-    {
-        Product product = manager.findProduct(id);
-        
-        if(product == null) 
-        {
-            System.out.println("Product with ID: " + id +
-                               " is not recognised.");
-        }
-        return product;
-    }
 
-    /**
-     * @return The stock manager.
-     */
-    public StockManager getManager()
-    {
-        return manager;
-    }
 }
