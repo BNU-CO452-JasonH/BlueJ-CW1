@@ -101,7 +101,8 @@ public class StockManager
         if (product != null)
         {
             product.increaseQuantity(amount);
-            System.out.println("Product delivered: " + product + " [Qty: " + amount + "]");
+            System.out.println("Product delivered: " + product.getName() 
+                + " [Qty: " + amount + "]");
         }
         else
         {
@@ -164,7 +165,7 @@ public class StockManager
      */
     public void printAllProducts()
     {
-        System.out.println("|--- Stock List ---|\n");
+        System.out.println("\n|--- Stock List ---|\n");
         
         for (Product product : stock)
         {
@@ -177,7 +178,7 @@ public class StockManager
      */
     public void printLowStock()
     {
-        System.out.println("Products with low stock levels:\n");
+        System.out.println("\nProducts with low stock levels (stock < 4):\n");
         
         for (Product product : stock)
         {
