@@ -1,0 +1,114 @@
+StockManager stockManager = new StockManager();
+StockDemo stockDemo = new StockDemo(stockManager);
+stockDemo.runDemo();
+|------StockManager Demonstration------|
+===================
+Jason's Stock List
+===================
+101: PlayStation 4 Pro [Stock level: 0]
+102: Nintendo Switch Neon [Stock level: 0]
+103: Xbox One X [Stock level: 0]
+104: Xbox One S [Stock level: 0]
+105: PlaySation 4 Slim [Stock level: 0]
+106: PlaySation 5 [Stock level: 0]
+107: Xbox Series X [Stock level: 0]
+108: Xbox Series S [Stock level: 0]
+109: Nintendo Switch Grey [Stock level: 0]
+110: Xbox One S All-Digital Edition [Stock level: 0]
+111: Nintendo 2DS XL [Stock level: 0]
+
+|---Delivery Demonstration---|
+
+Product delivered: PlayStation 4 Pro [Qty: 1]
+Product delivered: Nintendo Switch Neon [Qty: 7]
+Product delivered: Xbox One X [Qty: 1]
+Product delivered: Xbox One S [Qty: 3]
+Product delivered: PlaySation 4 Slim [Qty: 4]
+Product delivered: PlaySation 5 [Qty: 5]
+Attempted to restock Xbox Series X with a non-positive amount: 0
+Product delivered: Xbox Series X [Qty: 0]
+Product delivered: Xbox Series S [Qty: 4]
+Product delivered: Nintendo Switch Grey [Qty: 6]
+Product delivered: Xbox One S All-Digital Edition [Qty: 4]
+Product delivered: Nintendo 2DS XL [Qty: 7]
+===================
+Jason's Stock List
+===================
+101: PlayStation 4 Pro [Stock level: 1]
+102: Nintendo Switch Neon [Stock level: 7]
+103: Xbox One X [Stock level: 1]
+104: Xbox One S [Stock level: 3]
+105: PlaySation 4 Slim [Stock level: 4]
+106: PlaySation 5 [Stock level: 5]
+107: Xbox Series X [Stock level: 0]
+108: Xbox Series S [Stock level: 4]
+109: Nintendo Switch Grey [Stock level: 6]
+110: Xbox One S All-Digital Edition [Stock level: 4]
+111: Nintendo 2DS XL [Stock level: 7]
+
+|---Selling Demonstration---|
+
+Insufficient stock of product: 101: PlayStation 4 Pro [Stock level: 1]
+Amount ordered of available stock: 1
+Sold 7 of product: 102: Nintendo Switch Neon [Stock level: 0]
+Insufficient stock of product: 103: Xbox One X [Stock level: 1]
+Amount ordered of available stock: 1
+Insufficient stock of product: 104: Xbox One S [Stock level: 3]
+Amount ordered of available stock: 3
+Sold 0 of product: 105: PlaySation 4 Slim [Stock level: 4]
+Insufficient stock of product: 106: PlaySation 5 [Stock level: 5]
+Amount ordered of available stock: 5
+Sold 0 of product: 107: Xbox Series X [Stock level: 0]
+Insufficient stock of product: 108: Xbox Series S [Stock level: 4]
+Amount ordered of available stock: 4
+Sold 5 of product: 109: Nintendo Switch Grey [Stock level: 1]
+Insufficient stock of product: 110: Xbox One S All-Digital Edition [Stock level: 4]
+Amount ordered of available stock: 4
+Sold 6 of product: 111: Nintendo 2DS XL [Stock level: 1]
+
+|---Stock Renaming Demonstration---|
+
+105: PlaySation 4 Slim [Stock level: 4]
+106: PlaySation 5 [Stock level: 0]
+Product ID 105 has been renamed to PlayStation 4 Slim
+Product ID 106 has been renamed to PlayStation 5
+105: PlayStation 4 Slim [Stock level: 4]
+106: PlayStation 5 [Stock level: 0]
+
+|---Stock Removal Demonstration---|
+
+Product ID 111 has been removed from the stock list.
+===================
+Jason's Stock List
+===================
+101: PlayStation 4 Pro [Stock level: 0]
+102: Nintendo Switch Neon [Stock level: 0]
+103: Xbox One X [Stock level: 0]
+104: Xbox One S [Stock level: 0]
+105: PlayStation 4 Slim [Stock level: 4]
+106: PlayStation 5 [Stock level: 0]
+107: Xbox Series X [Stock level: 0]
+108: Xbox Series S [Stock level: 0]
+109: Nintendo Switch Grey [Stock level: 1]
+110: Xbox One S All-Digital Edition [Stock level: 0]
+
+|---Product Search with Partial Name Demonstration---|
+
+Products beginning with 'PlayStation':
+101: PlayStation 4 Pro [Stock level: 0]
+105: PlayStation 4 Slim [Stock level: 4]
+106: PlayStation 5 [Stock level: 0]
+
+|---Low Product Stock Demonstration---|
+
+Products with low stock levels (stock < 4):
+
+101: PlayStation 4 Pro [Stock level: 0]
+102: Nintendo Switch Neon [Stock level: 0]
+103: Xbox One X [Stock level: 0]
+104: Xbox One S [Stock level: 0]
+106: PlayStation 5 [Stock level: 0]
+107: Xbox Series X [Stock level: 0]
+108: Xbox Series S [Stock level: 0]
+109: Nintendo Switch Grey [Stock level: 1]
+110: Xbox One S All-Digital Edition [Stock level: 0]
