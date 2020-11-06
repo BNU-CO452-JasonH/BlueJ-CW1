@@ -36,16 +36,30 @@ public class StockDemo
     }
     
     /**
-     * Demonstrates the use of a StockManager by showing details of all products in the
-     * stock list, taking delivery of all products and printing the new stock list
-     * afterwards.
+     * Demonstrates the use of a StockManager by running through delivery, renaming, removal
+     * & selling processes.
+     */
+    public void runDemo()
+    {
+       System.out.println("StockManager Demonstration\n");
+        
+       // Show details of all products.
+       manager.printAllProducts();
+       
+       // Demos delivery process
+       demoDelivery();
+       // Demos stock renaming process
+       demoRename();
+       // Demos stock removal process
+       demoRemove();
+    }
+    
+    /**
+     * Demonstrates taking delivery of all products.
      */
     public void demoDelivery()
     {
-        // Show details of all products.
-        manager.printAllProducts();
-        
-        // Take delivery of all products and print the stock afterwards.
+        // Take delivery of all products and print the updated stock list afterwards.
         manager.delivery(101, 5);
         manager.delivery(102, 2);
         manager.delivery(103, 7);
@@ -62,8 +76,8 @@ public class StockDemo
     }
     
     /**
-     * Demonstrates two products with misspelt names being renamed to their correct
-     * names.
+     * Demonstrates two products in the stock list with misspelt names being renamed 
+     * to their correct names.
      */
     public void demoRename()
     {
@@ -80,15 +94,15 @@ public class StockDemo
         manager.printDetails(106);
     }
     
+    /**
+     * Demonstrates a product found at the end of the stock list being removed.
+     */
     public void demoRemove()
     {
-        // Shows details of all products to begin with.
-        manager.printAllProducts();
-        
         // Removes the last product from the stock list based on its ID.
         manager.removeProduct(111);
         
-        // Shows details of all products again with the last product removed.
+        // Shows details of all products with the last product removed.
         manager.printAllProducts();
     }
 
