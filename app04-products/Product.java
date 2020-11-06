@@ -4,7 +4,7 @@
  * @author David J. Barnes and Michael Kölling.
  * @version 2016.02.29
  * Modified by Jason Huggins
- * Dated 05/11/2020
+ * Dated 06/11/2020
  */
 public class Product
 {
@@ -107,19 +107,19 @@ public class Product
     }
 
     /**
-     * Sell one of these products.
+     * Sell this product with a given quantity.
      * An error is reported if there appears to be no stock.
+     * @param quantity The quantity of the product to be sold.
      */
-    public void sellOne()
+    public void sellQuantity(int quantity)
     {
-        if(quantity > 0) 
+        if (this.quantity > quantity) 
         {
-            quantity--;
+            this.quantity = this.quantity - quantity;
         }
-        else 
+        else
         {
-            System.out.println(
-                "Attempt to sell an out of stock item: " + name);
+            System.out.println("Insufficient stock of product: " + toString());
         }
     }
 }
