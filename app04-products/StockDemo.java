@@ -36,11 +36,12 @@ public class StockDemo
     }
     
     /**
-     * Demonstrates the use of a StockManager by running through delivery, renaming, removal
-     * & selling processes.
+     * Demonstrates the use of a StockManager by running through several processes for
+     * testing purposes.
      */
     public void runDemo()
     {
+       System.out.println("|-------- Jason's Stock List --------|");
        System.out.println("StockManager Demonstration\n");
         
        // Show details of all products.
@@ -57,7 +58,7 @@ public class StockDemo
     /**
      * Demonstrates taking delivery of all products.
      */
-    public void demoDelivery()
+    private void demoDelivery()
     {
         // Take delivery of all products and print the updated stock list afterwards.
         manager.delivery(101, 5);
@@ -79,7 +80,7 @@ public class StockDemo
      * Demonstrates two products in the stock list with misspelt names being renamed 
      * to their correct names.
      */
-    public void demoRename()
+    private void demoRename()
     {
         // Shows details of the products with incorrect names.
         manager.printDetails(105);
@@ -97,7 +98,7 @@ public class StockDemo
     /**
      * Demonstrates a product found at the end of the stock list being removed.
      */
-    public void demoRemove()
+    private void demoRemove()
     {
         // Removes the last product from the stock list based on its ID.
         manager.removeProduct(111);
