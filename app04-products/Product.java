@@ -108,18 +108,27 @@ public class Product
 
     /**
      * Sell this product with a given quantity.
-     * An error is reported if there appears to be no stock.
-     * @param quantity The quantity of the product to be sold.
+     * An error is reported if there appears to be insufficient stock or no stock.
+     * @param sellQuantity The quantity of the product to be sold.
      */
-    public void sellQuantity(int quantity)
+    public void sell(int sellQuantity)
     {
-        if (this.quantity > quantity) 
+        if (quantity >= sellQuantity) 
         {
-            this.quantity = this.quantity - quantity;
+            quantity -= sellQuantity;
+            System.out.println("Sold " + sellQuantity + " of product: " + toString());
+        }
+        else if (sellQuantity > quantity)
+        {
+            System.out.println("Insufficient stock of product: " + toString());
+            
+            // Selling current quantity of product
+            System.out.println("Amount ordered: " + sellQuantity);
+            quantity = 0;
         }
         else
         {
-            System.out.println("Insufficient stock of product: " + toString());
+            System.out.println("No stock of product: " + toString());
         }
     }
 }
