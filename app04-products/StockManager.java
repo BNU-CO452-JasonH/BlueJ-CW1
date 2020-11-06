@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * The stock is described by zero or more Products.
  * 
  * @author Jason Huggins
- * @version 05/11/2020
+ * @version 06/11/2020
  */
 public class StockManager
 {
@@ -141,26 +141,44 @@ public class StockManager
      * Show the before and after status of the product.
      * @param id The ID of the product being sold.
      */
-    public void sellProduct(int id)
+    public void sellProduct(int id, int quantity)
     {
         Product product = findProduct(id);
         
-        if(product != null) 
+        if (product != null) 
         {
             printDetails(id);
-            product.sellOne();
+            product.sellQuantity(quantity);
             printDetails(id);
         }
     }
     
     /**
-     * Print details of all the products.
+     * Print details of all products.
      */
     public void printAllProducts()
     {
+        System.out.println("|--- Stock List ---|\n");
+        
         for (Product product : stock)
         {
             System.out.println(product);
+        }
+    }
+    
+    /**
+     * Prints details of all products with low stock levels (set to 3 in this case).
+     */
+    public void printLowStock()
+    {
+        System.out.println("Products with low stock levels:\n");
+        
+        for (Product product : stock)
+        {
+            if (product.getQuantity() <= 3)
+            {
+                System.out.println(product);
+            }
         }
     }
 }
