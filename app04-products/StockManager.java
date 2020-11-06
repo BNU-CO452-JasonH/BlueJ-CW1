@@ -165,7 +165,7 @@ public class StockManager
      */
     public void printAllProducts()
     {
-        System.out.println("\n|--- Stock List ---|\n");
+        printHeader();
         
         for (Product product : stock)
         {
@@ -178,7 +178,7 @@ public class StockManager
      */
     public void printLowStock()
     {
-        System.out.println("\nProducts with low stock levels (stock < 4):\n");
+        System.out.println("Products with low stock levels (stock < 4):\n");
         
         for (Product product : stock)
         {
@@ -187,5 +187,15 @@ public class StockManager
                 System.out.println(product);
             }
         }
+    }
+    
+    /**
+     * Prints a header for the stock list.
+     */
+    public void printHeader()
+    {
+        System.out.println("===================");
+        System.out.println("Jason's Stock List");
+        System.out.println("===================");
     }
 }
