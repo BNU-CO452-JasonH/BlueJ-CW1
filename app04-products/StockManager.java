@@ -174,6 +174,23 @@ public class StockManager
     }
     
     /**
+     * Prints details of products beginning with a certain string, given in the parameter.
+     * @param partialName The prefix of the product name to be searched for.
+     */
+    public void printPartialName(String partialName)
+    {
+        System.out.println("Products beginning with '" + partialName + "':");
+        
+        for (Product product : stock)
+        {
+            if (product.getName().startsWith(partialName))
+            {
+                System.out.println(product);
+            }
+        }
+    }
+    
+    /**
      * Prints details of all products with low stock levels (set to 3 in this case).
      */
     public void printLowStock()
