@@ -91,6 +91,9 @@ public class StockDemo
             amount++;
         }
 
+        // Test for error message when an invalid product ID is inputted.
+        manager.delivery(132, 5);
+        
         manager.printAllProducts();
     }
     
