@@ -3,11 +3,14 @@
  * stock manager so that users can add, edit,
  * print and remove stock products
  *
- * @author Student Name
- * @version 0.1
+ * @author Jason Huggins
+ * @version 13/11/2020
  */
 public class StockApp
 {
+    // Constant to clear the screen
+    public static final char CLEAR_CODE = '\u000C';
+    
     // Use to get user input
     private InputReader input;
     
@@ -24,14 +27,6 @@ public class StockApp
      */
     public void run()
     {
-        getMenuChoice();
-    }
-    
-    /**
-     * 
-     */
-    public void getMenuChoice()
-    {
         boolean finished = false;
         
         while(!finished)
@@ -43,8 +38,7 @@ public class StockApp
             finished = true;
         }
     }
-    
-   
+      
     /**
      * Print out a menu of operation choices
      */
@@ -63,9 +57,10 @@ public class StockApp
      */
     private void printHeading()
     {
+        System.out.println(CLEAR_CODE);
         System.out.println("******************************");
         System.out.println(" Stock Management Application ");
-        System.out.println("    App05: by Student Name");
+        System.out.println("    App05: by Jason Huggins");
         System.out.println("******************************");
     }
 }
