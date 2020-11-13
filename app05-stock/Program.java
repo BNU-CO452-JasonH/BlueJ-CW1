@@ -1,8 +1,8 @@
 /**
- * Write a description of class Program here.
+ * The Program class creates and runs an instance of the StockApp class. 
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Jason Huggins
+ * @version 13/11/2020
  */
 public class Program
 {
