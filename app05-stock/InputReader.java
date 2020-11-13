@@ -7,6 +7,8 @@ import java.util.Scanner;
  * 
  * @author     Michael Kölling and David J. Barnes
  * @version    0.1 (2016.02.29)
+ * Modified by Jason Huggins
+ * Dated 13/11/2020
  */
 public class InputReader
 {
@@ -26,7 +28,7 @@ public class InputReader
      *
      * @return  A String typed by the user.
      */
-    public String getInput()
+    public String getString()
     {
         System.out.print("> ");         // print prompt
         String inputLine = reader.nextLine();
