@@ -1,7 +1,7 @@
 /**
  * This app provides a user interface to the
  * stock manager so that users can add, edit,
- * print and remove stock products
+ * print and remove stock products.
  *
  * @author Jason Huggins
  * @version 17/11/2020
@@ -12,10 +12,11 @@ public class StockApp
     // public static final char CLEAR_CODE = '\u000C';
     
     // Constants for app commands
-    public static final String QUIT = "quit";
     public static final String ADD = "add";
-    public static final String PRINT_ALL = "printall";
     public static final String REMOVE = "remove";
+    public static final String DELIVER = "deliver";
+    public static final String PRINT_ALL = "printall";
+    public static final String QUIT = "quit";
     
     // Use to get user input
     private InputReader input;
@@ -25,7 +26,7 @@ public class StockApp
     private StockDemo demo;
     
     /**
-     * Constructor for objects of class StockApp
+     * Constructor for objects of class StockApp.
      */
     public StockApp()
     {
@@ -36,7 +37,7 @@ public class StockApp
 
     /**
      * Runs during the operation of the app, quitting when the user inputs
-     * "quit"
+     * "quit".
      */
     public void run()
     {
@@ -52,6 +53,7 @@ public class StockApp
             if (choice.equals(QUIT)) 
             {
                 System.out.println("Exiting application...");
+                System.out.println("You may now close this window.");
                 finished = true;
             }
             else
@@ -62,7 +64,7 @@ public class StockApp
     }
     
     /**
-     * Executes a menu choice based on what the user inputs
+     * Executes a menu choice based on what the user inputs.
      */
     public void executeMenuChoice(String choice)
     {
@@ -74,23 +76,28 @@ public class StockApp
         {
             removeProduct();
         }
+        else if (choice.equals(DELIVER))
+        {
+            deliverProduct();
+        }
         else if (choice.equals(PRINT_ALL))
         {
             manager.printAllProducts();
+            System.out.println("\nPress ENTER to return to the menu.");
+            String value = input.getString();
         }
     }
     
     /**
      * Adds a new product to the stock list, with the user needing to 
-     * provide a product ID and name
+     * provide a product ID and name.
      */
     private void addProduct()
     {
-        System.out.println("|-- Adding Product --|\n");
+        System.out.println("|-- Product Addition --|\n");
         
         System.out.println("Please enter the product ID:");
-        String value = input.getString();
-        int id = Integer.parseInt(value);
+        int id = Integer.parseInt(input.getString());
         
         System.out.println("Please enter the product name:");
         String name = input.getString();
@@ -107,19 +114,35 @@ public class StockApp
      */
     private void removeProduct()
     {
-        System.out.println("|-- Removing Product --|\n");
+        System.out.println("|-- Product Removal --|\n");
         manager.printAllProducts();
         
         System.out.println("\nPlease enter the ID of the product" + 
             " to be removed:");
-        String value = input.getString();
-        int id = Integer.parseInt(value);
+        int id = Integer.parseInt(input.getString());
         
         manager.removeProduct(id);
     }
     
     /**
-     * Print out a menu of operation choices
+     * Delivers a quantity of a product from the stock list, with the user
+     * inputting the product's ID and quantity.
+     */
+    private void deliverProduct()
+    {
+        System.out.println("|-- Product Delivery --|\n");
+        
+        System.out.println("Please enter the product ID:");
+        int id = Integer.parseInt(input.getString());
+        
+        System.out.println("Please enter a quantity:");
+        int qty = Integer.parseInt(input.getString());
+        
+        manager.delivery(id, qty);
+    }
+    
+    /**
+     * Print out a menu of operation choices.
      */
     private void printMenuChoices()
     {
@@ -139,7 +162,7 @@ public class StockApp
     }
     
     /**
-     * Print the title of the program and the authors name
+     * Print the title of the program and the authors name.
      */
     private void printHeading()
     {
