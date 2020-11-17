@@ -125,6 +125,15 @@ public class StockApp
     {
         System.out.println("    Add:        Add a new product");
         System.out.println("    Remove:     Remove an old product");
+        System.out.println("    Deliver:    Deliver a quantity of a" + 
+            " product");
+        System.out.println("    Sell:       Sell a quantity of a product");
+        System.out.println("    Search:     Search for a product by" + 
+            " a part of its name");
+        System.out.println("    LowStock:   Print all products with low" +
+            " stock levels (stock < 3)");
+        System.out.println("    ReStock:    Re-stock all products up to" +
+            " a set minimum level");
         System.out.println("    PrintAll:   Print all products");
         System.out.println("    Quit:       Quit the program");
     }
