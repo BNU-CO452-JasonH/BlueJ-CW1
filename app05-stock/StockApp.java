@@ -4,7 +4,7 @@
  * print and remove stock products
  *
  * @author Jason Huggins
- * @version 13/11/2020
+ * @version 17/11/2020
  */
 public class StockApp
 {
@@ -15,6 +15,7 @@ public class StockApp
     public static final String QUIT = "quit";
     public static final String ADD = "add";
     public static final String PRINT_ALL = "printall";
+    public static final String REMOVE = "remove";
     
     // Use to get user input
     private InputReader input;
@@ -69,10 +70,13 @@ public class StockApp
         {
             addProduct();
         }
+        else if (choice.equals(REMOVE))
+        {
+            removeProduct();
+        }
         else if (choice.equals(PRINT_ALL))
         {
             manager.printAllProducts();
-            String value = input.getString();
         }
     }
     
@@ -82,7 +86,7 @@ public class StockApp
      */
     private void addProduct()
     {
-        System.out.println("Adding new product.\n");
+        System.out.println("|-- Adding Product --|\n");
         
         System.out.println("Please enter the product ID:");
         String value = input.getString();
@@ -94,21 +98,35 @@ public class StockApp
         Product product = new Product(id, name);
         manager.addProduct(product);
         
-        System.out.println("\nYou have added: " + product);
-        System.out.println();
+        System.out.println("\nYou have added: " + product + "\n");
     }
+    
+    /**
+     * Removes a product from the stock list, with the user inputting a
+     * product ID through the terminal window.
+     */
+    private void removeProduct()
+    {
+        System.out.println("|-- Removing Product --|\n");
+        manager.printAllProducts();
         
+        System.out.println("\nPlease enter the ID of the product" + 
+            " to be removed:");
+        String value = input.getString();
+        int id = Integer.parseInt(value);
+        
+        manager.removeProduct(id);
+    }
+    
     /**
      * Print out a menu of operation choices
      */
     private void printMenuChoices()
     {
-        System.out.println();
         System.out.println("    Add:        Add a new product");
         System.out.println("    Remove:     Remove an old product");
         System.out.println("    PrintAll:   Print all products");
         System.out.println("    Quit:       Quit the program");
-        System.out.println();        
     }
     
     /**
@@ -117,9 +135,9 @@ public class StockApp
     private void printHeading()
     {
         // System.out.println(CLEAR_CODE);
-        System.out.println("******************************");
+        System.out.println("\n******************************");
         System.out.println(" Stock Management Application ");
         System.out.println("    App05: by Jason Huggins");
-        System.out.println("******************************");
+        System.out.println("******************************\n");
     }
 }
