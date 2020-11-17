@@ -15,6 +15,7 @@ public class StockApp
     public static final String ADD = "add";
     public static final String REMOVE = "remove";
     public static final String DELIVER = "deliver";
+    public static final String SELL = "sell";
     public static final String PRINT_ALL = "printall";
     public static final String QUIT = "quit";
     
@@ -80,6 +81,10 @@ public class StockApp
         {
             deliverProduct();
         }
+        else if (choice.equals(SELL))
+        {
+            sellProduct();
+        }
         else if (choice.equals(PRINT_ALL))
         {
             manager.printAllProducts();
@@ -139,6 +144,23 @@ public class StockApp
         int qty = Integer.parseInt(input.getString());
         
         manager.delivery(id, qty);
+    }
+    
+    /**
+     * Sells a quantity of a product from the stock list, with the user
+     * inputting the product's ID and quantity.
+     */
+    private void sellProduct()
+    {
+        System.out.println("|-- Product Sale --|\n");
+        
+        System.out.println("Please enter the product ID:");
+        int id = Integer.parseInt(input.getString());
+        
+        System.out.println("Please enter a quantity:");
+        int qty = Integer.parseInt(input.getString());
+        
+        manager.sellProduct(id, qty);
     }
     
     /**
