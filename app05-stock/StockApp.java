@@ -100,9 +100,10 @@ public class StockApp
         else if (choice.equals(PRINT_ALL))
         {
             manager.printAllProducts();
-            System.out.println("\nPress ENTER to return to the menu.");
-            String value = input.getString();
         }
+        
+        System.out.println("\nPress ENTER to return to the menu.");
+        String value = input.getString();
     }
     
     /**
