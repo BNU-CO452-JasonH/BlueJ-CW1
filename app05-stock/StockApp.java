@@ -13,6 +13,9 @@ public class StockApp
     public static final String REMOVE = "remove";
     public static final String DELIVER = "deliver";
     public static final String SELL = "sell";
+    public static final String SEARCH = "search";
+    public static final String LOW_STOCK = "lowstock";
+    public static final String RE_STOCK = "restock";
     public static final String PRINT_ALL = "printall";
     public static final String QUIT = "quit";
     
@@ -81,6 +84,10 @@ public class StockApp
         else if (choice.equals(SELL))
         {
             sellProduct();
+        }
+        else if (choice.equals(SEARCH))
+        {
+            searchProduct();
         }
         else if (choice.equals(PRINT_ALL))
         {
@@ -158,6 +165,21 @@ public class StockApp
         int qty = Integer.parseInt(input.getString());
         
         manager.sellProduct(id, qty);
+    }
+    
+    /**
+     * Searches for products in the stock list by reading user input on
+     * part of a product name (e.g. "Sony" will print a list of products 
+     * with that prefix, such as "Sony PlayStation 4").
+     */
+    private void searchProduct()
+    {
+        System.out.println("|-- Product Search --|\n");
+        
+        System.out.println("Please enter a product name (can be partial):");
+        String partialName = input.getString();
+        
+        manager.printPartialName(partialName);
     }
     
     /**
