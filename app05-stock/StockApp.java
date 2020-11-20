@@ -89,6 +89,14 @@ public class StockApp
         {
             searchProduct();
         }
+        else if (choice.equals(LOW_STOCK))
+        {
+            manager.printLowStock();
+        }
+        else if (choice.equals(RE_STOCK))
+        {
+            manager.restockProducts();
+        }
         else if (choice.equals(PRINT_ALL))
         {
             manager.printAllProducts();
