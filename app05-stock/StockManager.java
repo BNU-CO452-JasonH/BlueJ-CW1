@@ -25,22 +25,16 @@ public class StockManager
      * already exists in the stock list, an error message will be
      * shown, saying that it's a duplicate.
      * @param item The product to be added to the stock list.
-     * @return false if the inputted product ID is a duplicate, otherwise
-     * the product will be added to the stock list.
      */
-    public boolean addProduct(Product item)
+    public void addProduct(Product item)
     {
         if (findProduct(item.getID()) != null) 
         {
             System.out.println("Error: This product has a duplicated ID.");
-            return false;
         }
         else
         {
             stock.add(item);
-            System.out.println("Product has been added to "
-                + "the stock list: " + item);
-            return true;
         }
     }
     
