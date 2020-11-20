@@ -169,8 +169,8 @@ public class StockApp
     
     /**
      * Searches for products in the stock list by reading user input on
-     * part of a product name (e.g. "Sony" will print a list of products 
-     * with that prefix, such as "Sony PlayStation 4").
+     * part of a product name (e.g. "Play" will print a list of products 
+     * with that prefix, such as "PlayStation 4").
      */
     private void searchProduct()
     {
