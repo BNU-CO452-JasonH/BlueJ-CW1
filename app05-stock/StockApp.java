@@ -4,13 +4,10 @@
  * print and remove stock products.
  *
  * @author Jason Huggins
- * @version 17/11/2020
+ * @version 20/11/2020
  */
 public class StockApp
 {
-    // Constant to clear the screen
-    // public static final char CLEAR_CODE = '\u000C';
-    
     // Constants for app commands
     public static final String ADD = "add";
     public static final String REMOVE = "remove";
@@ -109,8 +106,6 @@ public class StockApp
         
         Product product = new Product(id, name);
         manager.addProduct(product);
-        
-        System.out.println("\nYou have added: " + product + "\n");
     }
     
     /**
@@ -188,7 +183,6 @@ public class StockApp
      */
     private void printHeading()
     {
-        // System.out.println(CLEAR_CODE);
         System.out.println("\n******************************");
         System.out.println(" Stock Management Application ");
         System.out.println("    App05: by Jason Huggins");
