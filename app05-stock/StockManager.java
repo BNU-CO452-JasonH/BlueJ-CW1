@@ -183,7 +183,8 @@ public class StockManager
     }
     
     /**
-     * Prints details of products beginning with a certain string, given in the parameter.
+     * Prints details of products beginning with a certain string, 
+     * given in the parameter.
      * @param partialName The prefix of the product name to be searched for.
      */
     public void printPartialName(String partialName)
@@ -200,7 +201,8 @@ public class StockManager
     }
     
     /**
-     * Prints details of all products with low stock levels (set to 3 in this case).
+     * Prints details of all products with low stock levels, where the
+     * low stock threshold is set to 3.
      */
     public void printLowStock()
     {
@@ -211,6 +213,25 @@ public class StockManager
             if (product.getQuantity() <= 3)
             {
                 System.out.println(product);
+            }
+        }
+    }
+    
+    /**
+     * Restocks all products with low stock levels to a set
+     * minimum level, which in this case is 7.
+     */
+    public void restockProducts()
+    {
+        printLowStock();
+        
+        System.out.println("\nRestocked above products to "
+            + "set minimum level - 7.");
+        for (Product product : stock)
+        {
+            if (product.getQuantity() <= 3)
+            {
+                product.setQuantity(7);
             }
         }
     }
