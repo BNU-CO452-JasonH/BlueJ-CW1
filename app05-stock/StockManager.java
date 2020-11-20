@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * The stock is described by zero or more Products.
  * 
  * @author Jason Huggins
- * @version 06/11/2020
+ * @version 20/11/2020
  */
 public class StockManager
 {
@@ -21,12 +21,27 @@ public class StockManager
     }
 
     /**
-     * Add a product to the list.
-     * @param item The item to be added.
+     * Add a product to the list. If the product ID entered by the user
+     * already exists in the stock list, an error message will be
+     * shown, saying that it's a duplicate.
+     * @param item The product to be added to the stock list.
+     * @return false if the inputted product ID is a duplicate, otherwise
+     * the product will be added to the stock list.
      */
-    public void addProduct(Product item)
+    public boolean addProduct(Product item)
     {
-        stock.add(item);
+        if (findProduct(item.getID()) != null) 
+        {
+            System.out.println("Error: This product has a duplicated ID.");
+            return false;
+        }
+        else
+        {
+            stock.add(item);
+            System.out.println("Product has been added to "
+                + "the stock list: " + item);
+            return true;
+        }
     }
     
     /**
