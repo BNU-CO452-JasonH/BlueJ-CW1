@@ -9,7 +9,7 @@ import java.util.Random;
  * @author David J. Barnes and Michael Kölling.
  * @version 2016.02.29
  * Modified by Jason Huggins
- * Dated 06/11/2020
+ * Dated 22/11/2020
  */
 public class StockDemo
 {
@@ -40,8 +40,7 @@ public class StockDemo
         manager.addProduct(new Product(107, "Xbox Series X"));
         manager.addProduct(new Product(108, "Xbox Series S"));
         manager.addProduct(new Product(109, "Nintendo Switch Grey"));
-        manager.addProduct(new Product(110, "Xbox One S All-Digital Edition"));
-        manager.addProduct(new Product(111, "Nintendo 2DS XL"));
+        manager.addProduct(new Product(110, "Xbox One S All-Digital Edition"));       
     }
     
     /**
@@ -84,7 +83,7 @@ public class StockDemo
         int amount = 0;
         
         // Randomly generates an amount to deliver for each product.
-        for (int id = 101; id <= 111; id++)
+        for (int id = 101; id <= 110; id++)
         {
             amount = generator.nextInt(9);
             manager.delivery(id, amount);
@@ -104,7 +103,7 @@ public class StockDemo
     {
         int amount = 0;
         
-        for (int id = 101; id <= 111; id++)
+        for (int id = 101; id <= 110; id++)
         {
             amount = generator.nextInt(9);
             manager.sellProduct(id, amount);
@@ -136,6 +135,9 @@ public class StockDemo
      */
     private void demoRemove()
     {
+        // Adds a new product to the stock list for this demo.
+        manager.addProduct(new Product(111, "Nintendo 2DS XL"));
+        
         // Removes the last product from the stock list based on its ID.
         manager.removeProduct(111);
         
