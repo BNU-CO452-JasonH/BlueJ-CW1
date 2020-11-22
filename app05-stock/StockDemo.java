@@ -35,8 +35,8 @@ public class StockDemo
         manager.addProduct(new Product(102, "Nintendo Switch Neon"));
         manager.addProduct(new Product(103, "Xbox One X"));
         manager.addProduct(new Product(104, "Xbox One S"));
-        manager.addProduct(new Product(105, "PlaySation 4 Slim"));
-        manager.addProduct(new Product(106, "PlaySation 5"));
+        manager.addProduct(new Product(105, "PlayStation 4 Slim"));
+        manager.addProduct(new Product(106, "PlayStation 5"));
         manager.addProduct(new Product(107, "Xbox Series X"));
         manager.addProduct(new Product(108, "Xbox Series S"));
         manager.addProduct(new Product(109, "Nintendo Switch Grey"));
