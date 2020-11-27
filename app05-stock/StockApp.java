@@ -101,9 +101,13 @@ public class StockApp
         {
             manager.printAllProducts();
         }
+        else
+        {
+            System.out.println("Error: choice entered is invalid.");
+        }
         
         System.out.println("\nPress ENTER to return to the menu.");
-        String value = input.getString();
+        input.getString();
     }
     
     /**
@@ -116,7 +120,8 @@ public class StockApp
         System.out.println("|-- Product Addition --|\n");
         
         System.out.println("Please enter the product ID:");
-        int id = Integer.parseInt(0 + input.getString());
+        // int id = input.getInt(); - doesn't work with check below
+        int id = Integer.parseInt(0 + input.getString()); // works but not ideal
         
         System.out.println("Please enter the product name:");
         String name = input.getString();
@@ -143,7 +148,7 @@ public class StockApp
         
         System.out.println("\nPlease enter the ID of the product" + 
             " to be removed:");
-        int id = Integer.parseInt(input.getString());
+        int id = input.getInt();
         
         manager.removeProduct(id);
     }
@@ -157,10 +162,10 @@ public class StockApp
         System.out.println("|-- Product Delivery --|\n");
         
         System.out.println("Please enter the product ID:");
-        int id = Integer.parseInt(input.getString());
+        int id = input.getInt();
         
         System.out.println("Please enter a quantity:");
-        int qty = Integer.parseInt(input.getString());
+        int qty = input.getInt();
         
         manager.delivery(id, qty);
     }
@@ -174,10 +179,10 @@ public class StockApp
         System.out.println("|-- Product Sale --|\n");
         
         System.out.println("Please enter the product ID:");
-        int id = Integer.parseInt(input.getString());
+        int id = input.getInt();
         
         System.out.println("Please enter a quantity:");
-        int qty = Integer.parseInt(input.getString());
+        int qty = input.getInt();
         
         manager.sellProduct(id, qty);
     }
