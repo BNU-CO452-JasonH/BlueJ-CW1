@@ -170,7 +170,15 @@ public class StockManager
         
         if (product != null) 
         {
-            product.sell(quantity);
+            if (quantity > 0)
+            {
+                product.sell(quantity);
+            }
+            else
+            {
+                System.out.println("Error: cannot sell product with a " +
+                    "non-positive quantity.");
+            }
         }
         else
         {
