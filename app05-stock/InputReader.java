@@ -30,7 +30,7 @@ public class InputReader
     public String getString()
     {
         System.out.print("> ");         // print prompt
-        return reader.next();
+        return reader.nextLine();
     }
     
     /**
