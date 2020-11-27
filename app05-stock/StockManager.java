@@ -35,7 +35,7 @@ public class StockManager
         else
         {
             stock.add(item);
-            System.out.println("\nYou have added: " + item + "\n");
+            System.out.println("You have added: " + item);
         }
     }
     
