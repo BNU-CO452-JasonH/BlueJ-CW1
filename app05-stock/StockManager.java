@@ -107,12 +107,20 @@ public class StockManager
     public void delivery(int id, int amount)
     {
         Product product = findProduct(id);
-
+        
         if (product != null)
         {
-            product.increaseQuantity(amount);
-            System.out.println("Product delivered: " + product.getName() 
-                + " [Qty: " + amount + "]");
+            if (amount > 0)
+            {
+                product.increaseQuantity(amount);
+                System.out.println("Product delivered: " + 
+                    product.getName() + " [Qty: " + amount + "]");
+            }
+            else
+            {
+                System.out.println("Error: cannot deliver product with "
+                    + "a non-positive quantity.");
+            }
         }
         else
         {
