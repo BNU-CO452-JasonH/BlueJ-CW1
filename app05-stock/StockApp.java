@@ -119,9 +119,7 @@ public class StockApp
     {
         System.out.println("|-- Product Addition --|\n");
         
-        System.out.println("Please enter the product ID:");
-        // int id = input.getInt(); - doesn't work with check below
-        int id = Integer.parseInt(0 + input.getString()); // works but not ideal
+        int id = input.getInt("Please enter the product ID:");
         
         System.out.println("Please enter the product name:");
         String name = input.getString();
@@ -146,9 +144,8 @@ public class StockApp
     {
         System.out.println("|-- Product Removal --|\n");
         
-        System.out.println("\nPlease enter the ID of the product" + 
+        int id = input.getInt("\nPlease enter the ID of the product" + 
             " to be removed:");
-        int id = input.getInt();
         
         manager.removeProduct(id);
     }
@@ -161,11 +158,8 @@ public class StockApp
     {
         System.out.println("|-- Product Delivery --|\n");
         
-        System.out.println("Please enter the product ID:");
-        int id = input.getInt();
-        
-        System.out.println("Please enter a quantity:");
-        int qty = input.getInt();
+        int id = input.getInt("Please enter the product ID:");
+        int qty = input.getInt("Please enter a quantity:");
         
         manager.delivery(id, qty);
     }
@@ -178,11 +172,8 @@ public class StockApp
     {
         System.out.println("|-- Product Sale --|\n");
         
-        System.out.println("Please enter the product ID:");
-        int id = input.getInt();
-        
-        System.out.println("Please enter a quantity:");
-        int qty = input.getInt();
+        int id = input.getInt("Please enter the product ID:");
+        int qty = input.getInt("Please enter a quantity:");
         
         manager.sellProduct(id, qty);
     }
