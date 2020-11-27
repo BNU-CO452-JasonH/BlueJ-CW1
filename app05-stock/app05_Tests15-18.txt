@@ -1,0 +1,162 @@
+
+******************************
+ Stock Management Application 
+    App05: by Jason Huggins
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of a product
+    Sell:       Sell a quantity of a product
+    Search:     Search for a product by a part of its name
+    LowStock:   Print all products with low stock levels (stock < 3)
+    ReStock:    Re-stock all products up to a set minimum level
+    PrintAll:   Print all products
+    Quit:       Quit the program
+> sell
+|-- Product Sale --|
+
+Please enter the product ID:
+> 112
+Please enter a quantity:
+> -2
+Error: cannot sell product with a non-positive quantity.
+
+Press ENTER to return to the menu.
+> 
+
+******************************
+ Stock Management Application 
+    App05: by Jason Huggins
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of a product
+    Sell:       Sell a quantity of a product
+    Search:     Search for a product by a part of its name
+    LowStock:   Print all products with low stock levels (stock < 3)
+    ReStock:    Re-stock all products up to a set minimum level
+    PrintAll:   Print all products
+    Quit:       Quit the program
+> search
+|-- Product Search --|
+
+Please enter a product name (can be partial):
+> PlayStation
+Products beginning with 'PlayStation':
+101: PlayStation 4 Pro [Stock level: 0]
+105: PlayStation 4 Slim [Stock level: 0]
+106: PlayStation 5 [Stock level: 0]
+115: PlayStation Vita [Stock level: 0]
+
+Press ENTER to return to the menu.
+> 
+
+******************************
+ Stock Management Application 
+    App05: by Jason Huggins
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of a product
+    Sell:       Sell a quantity of a product
+    Search:     Search for a product by a part of its name
+    LowStock:   Print all products with low stock levels (stock < 3)
+    ReStock:    Re-stock all products up to a set minimum level
+    PrintAll:   Print all products
+    Quit:       Quit the program
+> lowstock
+Products with low stock levels (stock < 4):
+
+101: PlayStation 4 Pro [Stock level: 0]
+102: Nintendo Switch Neon [Stock level: 0]
+103: Xbox One X [Stock level: 0]
+104: Xbox One S [Stock level: 0]
+105: PlayStation 4 Slim [Stock level: 0]
+106: PlayStation 5 [Stock level: 0]
+107: Xbox Series X [Stock level: 0]
+108: Xbox Series S [Stock level: 0]
+109: Nintendo Switch Grey [Stock level: 0]
+110: Xbox One S All-Digital Edition [Stock level: 0]
+111: Nintendo 2DS XL [Stock level: 0]
+112: Nintendo 3DS XL [Stock level: 0]
+114: Google Stadia Pro [Stock level: 0]
+115: PlayStation Vita [Stock level: 0]
+
+Press ENTER to return to the menu.
+> 
+
+******************************
+ Stock Management Application 
+    App05: by Jason Huggins
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of a product
+    Sell:       Sell a quantity of a product
+    Search:     Search for a product by a part of its name
+    LowStock:   Print all products with low stock levels (stock < 3)
+    ReStock:    Re-stock all products up to a set minimum level
+    PrintAll:   Print all products
+    Quit:       Quit the program
+> restock
+Products with low stock levels (stock < 4):
+
+101: PlayStation 4 Pro [Stock level: 0]
+102: Nintendo Switch Neon [Stock level: 0]
+103: Xbox One X [Stock level: 0]
+104: Xbox One S [Stock level: 0]
+105: PlayStation 4 Slim [Stock level: 0]
+106: PlayStation 5 [Stock level: 0]
+107: Xbox Series X [Stock level: 0]
+108: Xbox Series S [Stock level: 0]
+109: Nintendo Switch Grey [Stock level: 0]
+110: Xbox One S All-Digital Edition [Stock level: 0]
+111: Nintendo 2DS XL [Stock level: 0]
+112: Nintendo 3DS XL [Stock level: 0]
+114: Google Stadia Pro [Stock level: 0]
+115: PlayStation Vita [Stock level: 0]
+
+Restocked above products to set minimum level - 7.
+
+Press ENTER to return to the menu.
+> 
+
+******************************
+ Stock Management Application 
+    App05: by Jason Huggins
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of a product
+    Sell:       Sell a quantity of a product
+    Search:     Search for a product by a part of its name
+    LowStock:   Print all products with low stock levels (stock < 3)
+    ReStock:    Re-stock all products up to a set minimum level
+    PrintAll:   Print all products
+    Quit:       Quit the program
+> printall
+===================
+Jason's Stock List
+===================
+101: PlayStation 4 Pro [Stock level: 7]
+102: Nintendo Switch Neon [Stock level: 7]
+103: Xbox One X [Stock level: 7]
+104: Xbox One S [Stock level: 7]
+105: PlayStation 4 Slim [Stock level: 7]
+106: PlayStation 5 [Stock level: 7]
+107: Xbox Series X [Stock level: 7]
+108: Xbox Series S [Stock level: 7]
+109: Nintendo Switch Grey [Stock level: 7]
+110: Xbox One S All-Digital Edition [Stock level: 7]
+111: Nintendo 2DS XL [Stock level: 7]
+112: Nintendo 3DS XL [Stock level: 7]
+114: Google Stadia Pro [Stock level: 7]
+115: PlayStation Vita [Stock level: 7]
+
+Press ENTER to return to the menu.
+> 
