@@ -29,19 +29,40 @@ public class InputReader
      */
     public String getString()
     {
-        System.out.print("> ");         // print prompt
+        System.out.print("> "); // user input prompt
         return reader.nextLine();
     }
     
     /**
      * Read a line of text from standard input (the text terminal),
-     * and return it as an int.
+     * and return it as an int. If an invalid integer is entered,
+     * the exception will be caught and an error message will be
+     * shown.
      *
-     * @return An int typed by the user.
+     * @param prompt The string prompting the user for an integer input.
+     * @return The valid integer inputted by the user.
      */
-    public int getInt()
+    public int getInt(String prompt)
     {
-        System.out.print("> ");         // print prompt
-        return reader.nextInt();
+        boolean isValid = false;
+        int number = 0;
+        
+        while (!isValid)
+        {
+            try
+            {
+                System.out.println(prompt);
+                System.out.print("> "); // user input prompt
+                String value = reader.nextLine();
+                number = Integer.parseInt(value);
+                isValid = true;
+            }
+            catch (Exception e)
+            {
+                System.out.println("Error: invalid integer inputted.");
+            }
+        }
+        
+        return number;
     }
 }
