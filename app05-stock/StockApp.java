@@ -4,7 +4,7 @@
  * print and remove stock products.
  *
  * @author Jason Huggins
- * @version 20/11/2020
+ * @version 27/11/2020
  */
 public class StockApp
 {
@@ -115,15 +115,23 @@ public class StockApp
         System.out.println("|-- Product Addition --|\n");
         
         System.out.println("Please enter the product ID:");
-        int id = Integer.parseInt(input.getString());
+        int id = Integer.parseInt(0 + input.getString());
         
         System.out.println("Please enter the product name:");
         String name = input.getString();
         
-        Product product = new Product(id, name);
-        manager.addProduct(product);
+        if (id != 0 && !name.isBlank())
+        {
+            Product product = new Product(id, name);
+            manager.addProduct(product);
         
-        System.out.println("\nYou have added: " + product + "\n");
+            System.out.println("\nYou have added: " + product + "\n");
+        }
+        else
+        {
+            System.out.println("Invalid input. The ID and product name" +
+                " must not be blank.");
+        }
     }
     
     /**
