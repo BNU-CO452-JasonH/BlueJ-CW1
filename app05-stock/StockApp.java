@@ -108,7 +108,8 @@ public class StockApp
     
     /**
      * Adds a new product to the stock list, with the user needing to 
-     * provide a product ID and name.
+     * provide a product ID and name. If blank inputs are given for
+     * the product ID and/or name, an error message will be shown.
      */
     private void addProduct()
     {
@@ -124,8 +125,6 @@ public class StockApp
         {
             Product product = new Product(id, name);
             manager.addProduct(product);
-        
-            System.out.println("\nYou have added: " + product + "\n");
         }
         else
         {
