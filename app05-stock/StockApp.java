@@ -140,7 +140,6 @@ public class StockApp
     private void removeProduct()
     {
         System.out.println("|-- Product Removal --|\n");
-        manager.printAllProducts();
         
         System.out.println("\nPlease enter the ID of the product" + 
             " to be removed:");
