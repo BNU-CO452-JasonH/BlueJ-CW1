@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * The stock is described by zero or more Products.
  * 
  * @author Jason Huggins
- * @version 20/11/2020
+ * @version 27/11/2020
  */
 public class StockManager
 {
@@ -35,6 +35,7 @@ public class StockManager
         else
         {
             stock.add(item);
+            System.out.println("\nYou have added: " + item + "\n");
         }
     }
     
